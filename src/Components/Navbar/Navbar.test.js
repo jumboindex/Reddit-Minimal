@@ -13,4 +13,7 @@ describe('<Navbar />', ()=> {
     test('renders the searchbar element', ()=> {
         expect(wrapper.find(Searchbar).exists()).toEqual(true);
     })
+    test('renders the three dots icon', ()=>{
+       expect(wrapper.find('.menu').exists()).toEqual(true); 
+    })
 });

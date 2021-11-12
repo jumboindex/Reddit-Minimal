@@ -6,7 +6,7 @@ describe('Searchbar', ()=> {
     beforeEach(()=> {
         wrapper = shallow(<Searchbar />);
     });  
-    it('renders an textinput element', () => {
-        expect(wrapper.matchesElement(<input type='text' placeholder='Search..'></input>)).toEqual(true);
+    it('renders an text input element', () => {
+        expect(wrapper.containsMatchingElement(<input type='text' placeholder='Search..'></input>)).toEqual(true);
     });
 });
