@@ -4,6 +4,7 @@ import { ReactComponent as Logo } from './Logo/Reddit-Logo-Light.svg'
 import { ReactComponent as MenuIcon } from './Menu-Icons/three-dots-vertical.svg'
 
 import Searchbar from "../Searchbar/Searchbar";
+import OptionsMenu from "../Options-Menu/OptionsMenu";
 
 const Navbar = () => {
     return (
@@ -13,6 +14,7 @@ const Navbar = () => {
             <button className='menu-btn'>
                 <MenuIcon className='menu' />
             </button>
+            <OptionsMenu />
         </nav>
     )
 };

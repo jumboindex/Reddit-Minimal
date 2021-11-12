@@ -4,6 +4,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: whitesmoke;
 }
 
 .logo {
@@ -38,7 +39,7 @@ nav {
 }
 
 .menu {
-    height: 3.5rem;
+    height: 3rem;
     width: 1.75rem;
 }
 
@@ -48,4 +49,13 @@ nav {
 
 }
 
+.options-menu {
+    position: absolute;
+    top: 4rem;
+    right: 6rem;
+    border: 1px solid black;
+    width: 200px;
+    height: 200px;
+    text-transform: capitalize;
+}
 
