@@ -1,0 +1,129 @@
+.light-grey {
+    color:#8f8f8f;
+}
+
+.options-menu {
+    position: absolute;
+    top: 4rem;
+    right: 4rem;
+    border: 1px solid black;
+    width: 230px;
+    height: 220px;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: repeat(5, 1fr);
+    justify-items: center;
+    align-items: center;
+}
+
+
+.options-text {
+    text-transform: uppercase;
+    font-weight: 500;
+    line-height: 1.75rem;
+    font-size: 0.75rem;
+    margin: 0.5rem 0.5rem;
+}
+
+.icon {
+    height: 1.25rem;
+    width: 1.25rem;
+    margin-left: 1rem;
+    margin-right: 1.5rem;
+}
+
+.veiw-options {
+    grid-area: 1 / 1 / span 1 / span 2 ;
+    justify-self: start;
+   
+}
+
+.nightmode-icon {
+    grid-area: 2 / 1 / span 1 / span 1;
+}
+
+.nightmode-text {
+    grid-area: 2 / 2 / span 1 / span 1;
+    justify-self: start;
+}
+
+.nightmode-slider {
+    grid-area: 2 / 3 / span 1 / span 1;
+
+}
+
+.more-stuff {
+    grid-area: 3 / 1 / span 1 / span 2;
+    justify-self: start;
+}
+
+.github-icon {
+    grid-area: 4 / 1 / span 1 / span 1;
+}
+
+.github-text {
+    grid-area:  4 / 2 / span 1 / span 1;
+    justify-self: start;
+}
+
+.reddit-icon {
+    grid-area: 5 / 1 / span 1 / span 1;
+}
+
+.reddit-text {
+    grid-area: 5 / 2 / span 1 / span 1;
+    justify-self: start;
+}
+
+/* Slider Styling */
+
+.nightmode-slider {
+    display: inline-block;
+    height: 18px;
+    position: relative;
+    width: 2rem;
+    bottom: 2px;
+}
+
+.nightmode-slider input {
+    display: none;
+}
+
+.slider {
+    background-color:#9d9d9d;
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: .4s;
+}
+ 
+.slider:before {
+    background-color: #fafafa;
+    bottom: 0;
+    content: "";
+    height: 18px;
+    left: 0;
+    position: absolute;
+    transition: .4s;
+    width: 18px;
+}
+ 
+input:checked+.slider {
+    background-color:#8e9194;
+}
+ 
+input:checked+.slider:before {
+    transform: translateX(14px);
+}
+ 
+.slider.round {
+    border-radius: 34px;
+}
+ 
+.slider.round:before {
+    border-radius: 50%;
+}

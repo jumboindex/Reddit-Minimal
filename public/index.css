@@ -1,0 +1,7 @@
+html {
+    box-sizing: border-box;
+}
+
+p, span {
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+}
