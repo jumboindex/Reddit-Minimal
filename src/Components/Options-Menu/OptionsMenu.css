@@ -3,14 +3,14 @@
 }
 
 .options-menu {
+    display: grid;
     position: absolute;
     top: 4rem;
     right: 4rem;
     border: 1px solid black;
-    width: 230px;
+    width: 200px;
     height: 220px;
     text-align: center;
-    display: grid;
     grid-template-columns: 1fr 2fr 1fr;
     grid-template-rows: repeat(5, 1fr);
     justify-items: center;
