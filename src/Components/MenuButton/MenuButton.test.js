@@ -1,7 +1,7 @@
 import { shallow } from 'enzyme';
 import MenuButton from './MenuButton';
 import OptionsMenu from '../Options-Menu/OptionsMenu';
-import { ReactComponent as MenuIcon } from './Menu-Icons/three-dots-vertical.svg'
+import { ReactComponent as MenuIcon } from './Menu-Icons/three-dots-vertical.svg';
 
 describe('menu button', ()=> {
     let wrapper;
@@ -16,6 +16,6 @@ describe('menu button', ()=> {
      });
     test('Onclick renders the options menu', ()=>{
         wrapper.find('.menu-btn').simulate('click');
-        expect(wrapper.state('display')).toEqual(true); 
+        expect(wrapper.find(OptionsMenu)).toBeTruthy;
      });
 });

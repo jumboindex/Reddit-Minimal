@@ -9,8 +9,8 @@ const MenuButton = () => {
 
     return (
         <div>
-            <button className='menu-btn' onClick={() => setDisplay(!display)}>
-                <MenuIcon className='menu' />
+            <button aria-label='menu button' className='menu-btn' onClick={() => setDisplay(!display)}>
+                <MenuIcon aria-lable='menu button icon' className='menu' />
             </button>
             {display && <OptionsMenu id='options-menu' />}
         </div>

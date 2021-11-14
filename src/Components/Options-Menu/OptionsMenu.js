@@ -6,18 +6,18 @@ import { ReactComponent as RedditIcon } from './Icons/RedditIcon.svg';
 
 const OptionsMenu = ({ style }) => {
     return (
-        <div className='options-menu' style={style}>
+        <div aria-label='site options menu' className='options-menu' style={style}>
             <span className='options-text light-grey veiw-options'> View options </span>
             <NightMode className='icon nightmode-icon' />
             <span className='options-text nightmode-text'>Night Mode</span>
-            <label className="nightmode-slider" htmlFor="checkbox">
-                <input type="checkbox" id="checkbox" />
-                <div className="round slider"></div>
+            <label id='nightmode-slider' className="nightmode-slider" htmlFor="checkbox">
+                <input aria-labelledby='nightmode-slider' type="checkbox" id="checkbox" />
+                <div aria-labelledby='nightmode-slider' className="round slider"></div>
             </label>
             <span className='options-text light-grey more-stuff'> More Stuff </span> 
-            <Github className='icon github-icon' />
+            <Github alt='github icon' className='icon github-icon' />
             <span className='options-text github-text'>Github</span>
-            <RedditIcon className='icon reddit-icon' />
+            <RedditIcon alt='github icon' className='icon reddit-icon' />
             <span className='options-text reddit-text'>Visit Reddit</span> 
         </div>
     )
