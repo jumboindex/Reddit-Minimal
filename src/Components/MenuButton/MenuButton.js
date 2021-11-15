@@ -5,14 +5,11 @@ import { CSSTransition } from "react-transition-group";
 
 
 const MenuButton = () => {
-    
     const [ display, setDisplay ] = useState(false);
-    
-    
     return (
-        <div>
-            <button aria-label='menu button' className='menu-btn' onClick={() => setDisplay(!display)}>
-                <MenuIcon aria-lable='menu button icon' className='menu' />
+        <div data-testid='menu-button-component'>
+            <button data-testid='menu-button' aria-label='menu button' className='menu-btn' onClick={() => setDisplay(!display)}>
+                <MenuIcon data-testid='menu-icon' alt='menu button icon' className='menu' />
             </button>
             <CSSTransition 
                             in={display} 

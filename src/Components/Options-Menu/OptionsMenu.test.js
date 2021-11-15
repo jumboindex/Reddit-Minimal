@@ -1,24 +1,25 @@
 import OptionsMenu from './OptionsMenu';
-import { ReactComponent as NightMode } from './Icons/NightMode.svg';
-import { ReactComponent as Github } from './Icons/Github.svg';
-import { ReactComponent as RedditIcon } from './Icons/RedditIcon.svg';
-import { shallow } from 'enzyme';
+import { render, screen } from '@testing-library/react';
+
 
 describe('Options Menu', ()=> {
-    let wrapper;
     beforeEach(()=> {
-        wrapper = shallow(<OptionsMenu />);
-    });  
+        render(<OptionsMenu />);
+    }); 
+    it('renders the options menu', () => {
+        expect(screen.getByTestId('options-menu')).toBeInTheDocument();
+    })
     it('renders the nightmode icon', () => {
-        expect(wrapper.containsMatchingElement(NightMode)).toEqual(true);
+        expect(screen.queryByTestId('night-mode-icon')).toBeInTheDocument();
     });
     it('renders the github icon', () => {
-        expect(wrapper.containsMatchingElement(Github)).toEqual(true);
+        expect(screen.getByTestId('github-icon')).toBeInTheDocument();
     });
     it('renders the Reddit icon', () => {
-        expect(wrapper.containsMatchingElement(RedditIcon)).toEqual(true);
+        expect(screen.getByTestId('reddit-icon')).toBeInTheDocument();
     });
-    it('renders the checkbox / nightmode element', () => {
-        expect(wrapper.containsMatchingElement(<input type="checkbox" id="checkbox" />)).toEqual(true);
+    it('renders the nightmode checkbox / nightmode slider', () => {
+        expect(screen.getByTestId('nightmode-checkbox')).toBeInTheDocument();
+        expect(screen.getByTestId('nightmode-slider')).toBeInTheDocument();
     });
 });

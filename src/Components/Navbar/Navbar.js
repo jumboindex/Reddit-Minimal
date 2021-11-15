@@ -7,9 +7,9 @@ import MenuButton from "../MenuButton/MenuButton";
 const Navbar = () => {
 
     return (
-        <nav aria-label='site navigation bar'>
-            <Logo className='logo' alt='reddit logo' />
-            <Searchbar  />
+        <nav data-testid='navbar'  aria-label='site navigation bar'>
+            <Logo data-testid='reddit-logo' className='logo' alt='reddit logo' />
+            <Searchbar />
             <MenuButton />
         </nav>
     )

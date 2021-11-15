@@ -1,21 +1,21 @@
-import { shallow } from 'enzyme';
 import Navbar from "./Navbar";
-import Searchbar from "../Searchbar/Searchbar";
-import MenuButton from '../MenuButton/MenuButton';
+import { render, screen } from '@testing-library/react'
 
 
 describe('<Navbar />', ()=> {
-    let wrapper;
     beforeEach(() => {
-        wrapper = shallow(<Navbar />);
+        render(<Navbar />);
+    });
+    test('the navbar renders',() => {
+        expect(screen.queryByTestId('navbar')).toBeInTheDocument()
     });
     test('renders the Reddit logo', ()=> {
-        expect(wrapper.find('.logo').exists()).toEqual(true);
+        expect(screen.queryByTestId('reddit-logo')).toBeInTheDocument();
     });
     test('renders the <Searchbar /> element', ()=> {
-        expect(wrapper.find(Searchbar).exists()).toEqual(true);
+        expect(screen.queryByTestId('searchbar')).toBeInTheDocument();
     });
     test('renders the <MenuButton />', () => {
-        expect(wrapper.find(MenuButton).exists()).toEqual(true);
+        expect(screen.queryByTestId('menu-button-component')).toBeInTheDocument();
     });
 });
