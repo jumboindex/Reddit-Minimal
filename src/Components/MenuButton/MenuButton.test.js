@@ -40,5 +40,4 @@ describe('menu button', ()=> {
         expect(optionsMenu).toHaveClass('options-menu-exit')
         expect(optionsMenu).toHaveClass('options-menu-exit-active')
      });
-   
 });

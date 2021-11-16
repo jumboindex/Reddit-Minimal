@@ -1,12 +1,15 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
-import Navbar from '../Components/Navbar/Navbar';
-import { shallow } from 'enzyme'
 
 
-describe('App', ()=> {
-  test('Renders the Navbar component', ()=> {
-    const wrapper = shallow(<App />)
-    expect(wrapper.find(Navbar).exists()).toEqual(true);
-  })
+describe('<App />', ()=> {
+  beforeAll(()=> {
+    render(<App />)
+  });
+  test('renders the Navbar component', ()=> {
+    expect(screen.getByTestId('navbar')).toBeInTheDocument();
+  });
+  /* test('renders the content component', () => {
+    expect(screen.getByTestId('content')).toBeInTheDocument();
+  }); */
 });
