@@ -1,0 +1,31 @@
+.subreddit-menu {
+    background-color:#ffffff ;
+    width: 300px;
+    height:fit-content;
+    position: relative;
+    left: 18vw;
+    top: 2vh;
+    margin-top: 1rem;
+    border-radius: 2%;    
+}
+
+.subreddit-menu-heading {
+    display: inline-block ;
+    width: 80%;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    font-weight: 575;
+    letter-spacing: 0.02;
+    line-height: 1.75rem;
+    color: #9e9e9e;
+    margin: 0.5rem 0 0 1.5rem;
+    
+}
+
+.subreddit-card-container {
+    border-top: 1px solid #9e9e9e;
+    width: 85%;
+    height: 80%;
+    margin: 0.25rem 1rem;
+    padding-top: 1rem;
+}

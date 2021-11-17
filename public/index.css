@@ -2,6 +2,6 @@ html {
     box-sizing: border-box;
 }
 
-p, span {
+p, span, h3 {
     font-family: "Roboto", "Helvetica", "Arial", sans-serif;
 }

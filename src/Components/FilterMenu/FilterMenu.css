@@ -2,7 +2,7 @@
     height: 250px;
     width: 250px;
     position: relative;
-    left: 20vw;
+    left: 19vw;
     top: 2vh;
 
 }
@@ -16,7 +16,7 @@
 }
 
 .filter-container:hover>.filter-icon, .filter-container:hover>.filter-font {
-    color: #ff9800;
+    color:rgb(255, 152, 0);
 }
 
 .filter-icon {
@@ -31,5 +31,4 @@
     color: #1f1f20;
     font-weight: 500;
     letter-spacing: 0.025
-    
 }
