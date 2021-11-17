@@ -1,0 +1,35 @@
+.post-card {
+    margin: 1rem 0;
+    background-color: #ffffff;
+}
+
+.post-card-title-container {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 0.75rem;
+}
+
+.post-card-img-container {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: #bdbdbd;
+    margin: 0 1rem;
+}
+
+.post-card-link {
+    font-size: 0.875rem;
+    font-weight: 550;
+    margin-right: 1rem;
+    line-height: 1.4rem;
+    letter-spacing:0.01071em;
+}
+
+.post-card-posted-by {
+    font-weight: 400;
+    font-size: 0.813rem; 
+    line-height: 1.3rem;
+    letter-spacing:0.01071em;
+}

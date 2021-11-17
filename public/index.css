@@ -5,3 +5,8 @@ html {
 p, span, h3 {
     font-family: "Roboto", "Helvetica", "Arial", sans-serif;
 }
+
+body {
+    background-color: #eef0f2;
+    height: fit-content;
+}

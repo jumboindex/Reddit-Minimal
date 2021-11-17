@@ -6,7 +6,7 @@ const SubredditCard = () => {
     return (
         <div data-testid='subreddit-card' className='subreddit-card'>
             <div className='subreddit-card-img-container'>
-                <img className='subreddit-card-img' />
+                <img  className='subreddit-card-img' />
             </div>
             <div className='subreddit-card-text-container'>
                 <span className='subreddit-card-title'> r/AskReddit</span>
@@ -18,4 +18,4 @@ const SubredditCard = () => {
 
 };
 
-export default SubredditCard
+export default SubredditCard;

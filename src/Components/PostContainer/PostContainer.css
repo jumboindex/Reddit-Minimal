@@ -1,0 +1,8 @@
+.post-container {
+    border: black 1px solid;
+    height:1200px;
+    width: 850px;
+    position: absolute;
+    left: 35%;
+    top: 10%;
+}
