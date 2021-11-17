@@ -2,7 +2,7 @@ html {
     box-sizing: border-box;
 }
 
-p, span, h3 {
+p, span, h2, h3{
     font-family: "Roboto", "Helvetica", "Arial", sans-serif;
 }
 
