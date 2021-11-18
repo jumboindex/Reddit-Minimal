@@ -3,6 +3,7 @@ span, h2 {
 }
 
 .post-card {
+    border:#d6d6d6 1px solid;
     height: 200px;
     margin: 1rem 0;
     background-color: #ffffff;
@@ -11,13 +12,16 @@ span, h2 {
     justify-content: space-between;
 }
 
+.post-card:hover {
+    transform: scale(1.005, 1.005);
+    box-shadow: 1px 2px rgb(165, 162, 162);
+}
+
 .post-card-container {
-    border: black 1px solid;
     height: 100%;
     width: 70%;
     display: flex;
     flex-flow: column nowrap;
-    justify-content: space-between;
 
 }
 
@@ -53,6 +57,13 @@ span, h2 {
    
 }
 
+.post-card-content {
+    height: 80%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+}
+
 .post-card-preview {
     margin: 1rem 1rem;
     font-size: 1.094rem;
@@ -61,10 +72,37 @@ span, h2 {
 }
 
 .post-card-footer {
-    padding: 1rem;
+    padding: 0.5rem;
     display: flex;
     flex-flow: row nowrap;
-    
+}
+
+.post-card-actions {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content:space-between;
+    align-items: center;
+    cursor:pointer;
+    padding: 0.5rem 0.25rem;
+}
+
+.post-card-actions:hover {
+    background-color:rgb(240, 240, 240);
+}
+
+.post-card-icon {
+    color:#757575;
+    margin: 0 0.5rem;
+    height: 1.1rem;
+    width: 1.1rem;
+}
+
+.post-card-text {
+    color: #757575;
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin: 0 0.25rem;
 }
 
 .post-card-votes {
@@ -75,4 +113,12 @@ span, h2 {
     display: flex;
     justify-content: center;
     align-items: center;
+    color: rgba(0, 0, 0, 0.54);
+    font-size: 1.25rem; 
+    font-weight: 500;
+    line-height: 1.5rem;
+}
+
+.post-card:hover>.post-card-votes {
+    transform: scale(1.005, 1.005);
 }
