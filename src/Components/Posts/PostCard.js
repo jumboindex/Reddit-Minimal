@@ -4,13 +4,15 @@ import { MdComment } from 'react-icons/md';
 import { BiLinkExternal } from 'react-icons/bi';
 import { BsShareFill } from 'react-icons/bs';
 
-const PostCard = () => {
 
+const src = 'https://external-preview.redd.it/gdCBQnE1tHxyJwXWgVguG3moyWiQQpL4ohCYb5meOBo.png?format=pjpg&amp;auto=webp&amp;s=ac773f69ad8bf80811892f15e83dfb4ca5ea6275'
+
+const PostCard = () => {
     return (
         <div data-testid='post-card' className='post-card'>
             <div className='post-card-container'>
                 <header className='post-card-title'>
-                    <div className='post-card-img-container'><img className='post-card-img' /></div>
+                    <div className='post-card-img-container'><img  className='post-card-img' /></div>
                     <span className='post-card-link'>r/AskReddit</span>
                     <span className='post-card-posted-by'>Posted by u/React-Tesing-Libary</span>
                 </header>
