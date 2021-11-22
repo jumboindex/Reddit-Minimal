@@ -122,3 +122,48 @@ span, h2 {
 .post-card:hover>.post-card-votes {
     transform: scale(1.005, 1.005);
 }
+
+.post-card-media-preview {
+    height: 80%;
+    width: 200px;
+    margin-right: 1rem;
+    text-align: center;
+}
+
+.media-preview {
+    height: 100%;
+    width: 100%;
+}
+.post-card-media-preview video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.post-card-media-preview embed {
+    object-position: 50% 50%;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    overflow-x: scroll;
+}
+
+.external-link {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.external-link a {
+    text-decoration: none;
+}
+
+.external-link a span {
+    border: solid 1px blue;
+    padding: 0.5rem;
+    border-radius: 5%;
+}
+
+.external-link a span:hover {
+    background-color: blueviolet;
+}
