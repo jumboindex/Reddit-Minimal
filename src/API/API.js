@@ -15,12 +15,26 @@ const getInitialPosts = async () => {
         }
         throw new Error('request failed' + response.statusText);
     } catch (error) {
-        console.log(error)
+        console.log(error);
+    }
+};
+
+const getSubreddit = async (subreddit) => {
+    try {
+        const response = await fetch(`${apiEndPoint}${subreddit}/about.json`);
+        if (response.ok) {
+            const jsonResponse = await response.json();
+            return jsonResponse.data;
+        }
+        throw new Error('request failed' + response.statusText);
+    } catch (error) {
+        console.log(error);
     }
 };
 
 
 
 export const API = {
-    getInitialPosts
+    getInitialPosts,
+    getSubreddit
 };

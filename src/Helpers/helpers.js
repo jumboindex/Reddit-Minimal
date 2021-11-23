@@ -6,7 +6,7 @@ export const mediaPreview = ( post_hint, url, media ) => {
 
     if (post_hint ==='link') {
         return ( <div className='external-link'>
-                    <a href={url} target='_blank' rel='noopener'>
+                    <a href={url} target='_blank' rel="noreferrer">
                     <span>External Link</span>
                     </a>
                  </div>   
@@ -18,18 +18,18 @@ export const mediaPreview = ( post_hint, url, media ) => {
             <img src={url} alt='media preview' className='media-preview' />
         );
     };
-    
+    // todo - figure out how to parse iframe html strings - "https://gfycat.com" - also produces these
     if (post_hint === 'rich:video') {
         if (url.includes('youtu')) {
             let str = media.oembed.html;
-            str.replace('&lt;', '<')
-            str.replace('&gt;', '>')
+            //str.replace('&lt;', '<')
+            //str.replace('&gt;', '>')
             console.log(str)
-            return ({str});
+            //return ({str});
         } else { return ( <embed 
                             type="video/mp4" title='media preview' 
-                            src={url} />
-        )};
+                            src={url} />)
+        };
     };
 
     if (post_hint === 'hosted:video') {
