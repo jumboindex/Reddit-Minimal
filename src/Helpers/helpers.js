@@ -34,7 +34,7 @@ export const mediaPreview = ( post_hint, url, media ) => {
 
     if (post_hint === 'hosted:video') {
         return (
-            <video controls autoplay='' loop aria-label='media preview'>
+            <video controls autoPlay='' loop aria-label='media preview'>
                 <source type="video/mp4" src={media.reddit_video.fallback_url} />
             </video>
         );
@@ -66,4 +66,8 @@ export const upvoteFormat = (upvotes) => {
         return str.slice(0,1) + '.' + str.slice(1,2) + 'K';
     }
     return str;
+}
+
+export const addCommas = (number) => {
+    return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }

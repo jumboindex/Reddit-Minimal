@@ -1,10 +1,10 @@
 import React from "react";
 import { BsPersonFill } from 'react-icons/bs'
 
-const SubredditIcon = ({ imageData, alt }) => { 
+        <BsPersonFill className=''/>
+const SubredditIcon = ({ imageData, alt}) => { 
 
 let shouldLoad = imageData ?  imageData.shouldLoad : false;
-
 
     return (
         <div>
