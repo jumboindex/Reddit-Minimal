@@ -18,6 +18,14 @@
     background-color: #bdbdbd;
     margin-right: 1rem;
     margin-left: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.subreddit-icon {
+    height: 22px;
+    width: 22px;
 }
 
 .subreddit-card-text-container {

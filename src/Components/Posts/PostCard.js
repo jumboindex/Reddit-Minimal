@@ -17,7 +17,7 @@ const PostCard = ({ data }) => {
     
     useEffect(() => {
         dispatch(fetchSubredditImage(subreddit_name_prefixed));
-    }, []);
+    }, [dispatch, subreddit_name_prefixed]);
     
     let subredditImageData = useSelector(state => state.subredditImages.subredditImages[subreddit_name_prefixed]);
     return (

@@ -46,10 +46,24 @@ const getFeaturedSubreddits = async () => {
 
 }
 
-getFeaturedSubreddits();
+const getFilteredSubreddits = async (filter) => {
+    try {
+        const response = await fetch(`${apiEndPoint}${filter}.json`);
+        if (response.ok) {
+            const jsonResponse = await response.json();
+            return jsonResponse.data.children;
+        }
+        throw new Error('request failed' + response.statusText);
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+
 
 export const API = {
     getInitialPosts,
     getSubreddit,
-    getFeaturedSubreddits
+    getFeaturedSubreddits,
+    getFilteredSubreddits
 };
