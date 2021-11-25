@@ -1,5 +1,6 @@
 import React from "react";
 import { BsBoxArrowInUpRight } from 'react-icons/bs'
+import CommentCard from "../CommentCard/CommentCard";
 import UserIcon from "../UserIcon/UserIcon";
 import './Thread.css';
 const Thread = () => {
@@ -37,7 +38,7 @@ const Thread = () => {
             </section>
             <section className='thread-comments'>
                 <h2>Discussions</h2>
-
+                <CommentCard />
             </section>
         </article>
 

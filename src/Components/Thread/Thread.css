@@ -28,7 +28,6 @@ h1, h2, span {
 }
 
 .thread-header {
-    border: solid 1px black;
     height: 240px;
     margin: 1rem 0;
 }
