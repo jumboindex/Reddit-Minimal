@@ -1,0 +1,126 @@
+h1, h2, span {
+    letter-spacing:0.01071em
+}
+.flex {
+    display: flex; 
+}
+
+.thread-container {
+    height:1200px;
+    width: 850px;
+    position: absolute;
+    left: 35%;
+    top: 10%;
+    background-color: #ffffff;
+    border-radius: 1%;
+}
+
+.subreddit-path {
+    margin: 1rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 550;
+    margin-right: 1rem;
+    line-height: 1.4rem;
+    background-color:#ebebeb;
+    color: #a5a5a5;
+    border-radius: 5%;
+}
+
+.thread-header {
+    border: solid 1px black;
+    height: 240px;
+    margin: 1rem 0;
+}
+
+.upvotes-container {
+    border-right: 1px solid #e0e0e0;
+    width: 20%;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+
+.upvotes {
+    padding: 0.5rem 1rem;
+    align-items: center;
+    font-size: 0.9rem;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.upvotes svg {
+    margin-right: 0.25rem;
+    height: 1.25rem;
+}
+
+.ratio {
+    font-size: 0.75rem;
+    font-weight: 350;
+    line-height: 0.75;
+    margin-right: 1rem;
+    color: #757575;
+}
+
+.thread-details {
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.thread-user-container {
+    width: 100%;
+    align-items: center;
+}
+
+.thread-image-container {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: #bdbdbd;
+    margin: 0 1rem 0 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.post-user-name {
+    font-size: 0.9rem;
+    font-weight: 450;
+    margin-right: 0.75rem;
+}
+
+.post-time {
+    font-size: 0.75rem;
+    font-weight: 350;
+    color: #757575;
+}
+
+.thread-title-container {
+    margin-top: 1.5rem;
+}
+
+.thread-title-container h1 {
+    font-weight: 500;
+    font-size: 1.6rem;
+    margin-left: 1.5rem;
+}
+
+.thread-title-container div {
+
+    margin: 2rem 2rem 2rem 1.5rem;
+    height: 3px;
+    width: 120px;
+    background-color: red;
+
+}
+
+.thread-body, .thread-comments {
+    margin: 2rem 3rem;
+}
+
+.thread-comments h2 {
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}

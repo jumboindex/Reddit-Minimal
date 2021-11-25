@@ -5,6 +5,7 @@ import { Provider } from 'react-redux';
 import store from './store';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import FilteredContent from '../Components/FilteredContent/FilteredContent';
+import PostView from '../Components/PostVeiw/PostView';
 
 
 const App = () => {
@@ -19,6 +20,7 @@ const App = () => {
             <Route path='/new' element={<FilteredContent  />} />
             <Route path='/rising' element={<FilteredContent  />} />
             <Route path='/top' element={<FilteredContent  />} />
+            <Route path='/post' element={<PostView />} />
           </Routes>
         </Router>
       </Provider>  
