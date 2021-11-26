@@ -20,7 +20,7 @@ const App = () => {
             <Route path='/new' element={<FilteredContent  />} />
             <Route path='/rising' element={<FilteredContent  />} />
             <Route path='/top' element={<FilteredContent  />} />
-            <Route path='/post' element={<PostView />} />
+            <Route path='/post/:subreddit/:postID' element={<PostView />} />
           </Routes>
         </Router>
       </Provider>  

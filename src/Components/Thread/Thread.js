@@ -1,22 +1,75 @@
-import React from "react";
+import Markdown from "markdown-to-jsx";
 import { BsBoxArrowInUpRight } from 'react-icons/bs'
+import { Link } from "react-router-dom";
+import { getPostTime, mediaPreview, upvoteFormat } from "../../Helpers/helpers";
 import CommentCard from "../CommentCard/CommentCard";
 import UserIcon from "../UserIcon/UserIcon";
 import './Thread.css';
-const Thread = () => {
-    return (
+
+
+
+const Thread = ({ post, comments, params }) => {
+
+    let shouldLoad = Object.keys(post).length !== 0 ? true : false; 
+    const {subreddit, postID } = params;
+    const { ups, upvote_ratio, title, author, created, post_hint, url, media, selftext}  = post;
+    
+
+    if (shouldLoad) return (
         <article className='thread-container'>
             <nav>
-                <span className='subreddit-path font'> Home / Subreddits / StupidQuestions / PostID</span>
+                <span className='subreddit-path font'> <Link to='/'> Home </Link> / Subreddits / {subreddit} / {postID} </span>
             </nav>    
             <header className='thread-header flex' >
                 <div className='upvotes-container flex'>
                     <span className='upvotes flex'>
                         <BsBoxArrowInUpRight />
-                         31K
+                         { ups ? upvoteFormat(ups) : '...'}
                     </span>
                     <span className='ratio'>
-                       81% ratio 
+                      {upvote_ratio.toString().slice(2,4)}% ratio 
+                    </span>
+                </div>
+                <section className='thread-details flex'>
+                    <div className='thread-user-container flex'>
+                        <div className='thread-image-container'> 
+                            <UserIcon />
+                        </div>
+                        <span className='post-user-name'> {author} </span>
+                        <span className='post-time'> {getPostTime(created)}</span>
+                    </div>
+                    <div className='thread-title-container'>
+                        <h1>{title}</h1>
+                        <div></div>
+                    </div>
+                </section>
+            </header>
+            <section className='thread-body'>
+                {selftext ? <Markdown>{selftext}</Markdown> : null}
+                { post_hint ? <div className='thread-media-preview'>{mediaPreview(post_hint, url, media)} </div> : null}
+            </section>
+            <section className='thread-comments'>
+                <h2>Discussions</h2>
+                {comments.map((comment, index) => {
+                    return (<CommentCard key={index} comment={comment} />);
+                })}
+            </section>
+        </article>
+    )
+
+    return (
+        <article className='thread-container'>
+            <nav>
+                <span className='subreddit-path font'> Home / Subreddits / {subreddit} / {postID} </span>
+            </nav>    
+            <header className='thread-header flex' >
+                <div className='upvotes-container flex'>
+                    <span className='upvotes flex'>
+                        <BsBoxArrowInUpRight />
+                         33.7K
+                    </span>
+                    <span className='ratio'>
+                      91% ratio 
                     </span>
                 </div>
                 <section className='thread-details flex'>
@@ -41,8 +94,10 @@ const Thread = () => {
                 <CommentCard />
             </section>
         </article>
-
     )
 };
 
 export default Thread;
+
+//upvote_ratio.toString().slice(2,4)
+//{selftext ? <div dangerouslySetInnerHTML={{__html:html}}></div> : null}

@@ -71,3 +71,20 @@ export const upvoteFormat = (upvotes) => {
 export const addCommas = (number) => {
     return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
+
+export const getPostTime = (timeStamp) => {
+    const currentTime = Date.now()
+    const postDate = new Date(timeStamp * 1000)
+    
+    const differenceInSeconds = (currentTime - postDate) / 1000;
+    const years = Math.floor(differenceInSeconds/31536000)
+    const days = Math.floor(differenceInSeconds / 86400);
+    const hours = Math.floor(differenceInSeconds / 3600);
+    const minutes = Math.floor((differenceInSeconds % 3600) / 60);
+
+    if (years > 0) return `${years} years ago`;
+    if (days > 0) return `${days} days ago`;
+    if (hours > 0) return `${hours} hours ago`;
+    if (minutes > 0 ) return `${minutes} minuets ago`;
+    return NaN + ' ago';
+}

@@ -24,12 +24,13 @@ span, p {
 }
 
 .comment-text {
-    font-weight: 300;
+    font-weight: 350;
+    font-size: 0.95rem;
 }
 
 .comment-card-actions {
-    margin: 0 1rem 1rem 2rem;
-    padding-bottom: 1rem;
+    margin: 0 1rem 0 2rem;
+    padding-bottom: 0.5rem;
     display: flex;
     align-items: center;
 }

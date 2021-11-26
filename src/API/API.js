@@ -1,7 +1,7 @@
 const apiEndPoint = 'https://www.reddit.com/';
 const initialOptions = {
     headers: {
-        accept: 'application/json',
+        accept: 'application/json'
     }
 };
 
@@ -59,11 +59,23 @@ const getFilteredSubreddits = async (filter) => {
     }
 }
 
-
+const getPostWithComments = async ({subreddit, postID}) => {
+    try {
+        const response = await fetch(`${apiEndPoint}r/${subreddit}/comments/${postID}.json`, initialOptions);
+        if (response.ok) {
+            const jsonResponse = await response.json();
+            return jsonResponse
+        }
+        throw new Error('request failed' + response.statusText);
+    } catch (error) {
+        console.log(error);
+    }
+};
 
 export const API = {
     getInitialPosts,
     getSubreddit,
     getFeaturedSubreddits,
-    getFilteredSubreddits
+    getFilteredSubreddits,
+    getPostWithComments
 };

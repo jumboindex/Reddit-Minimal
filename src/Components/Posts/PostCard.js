@@ -7,12 +7,13 @@ import { mediaPreview, postTitleTrim, upvoteFormat } from "../../Helpers/helpers
 import { useDispatch, useSelector } from "react-redux";
 import { fetchSubredditImage } from "../../Features/subredditImageSlice/subredditImageSlice";
 import SubredditIcon from "../SubredditIcon/SubredditIcon";
+import { Link } from "react-router-dom";
 
 
 
 const PostCard = ({ data }) => {
 
-    const { title, subreddit_name_prefixed, author, ups, post_hint, url, media} = data.data;
+    const { title, subreddit_name_prefixed, author, ups, post_hint, url, media, subreddit, id} = data.data;
     const dispatch = useDispatch();
     
     useEffect(() => {
@@ -34,7 +35,9 @@ const PostCard = ({ data }) => {
                 <div className='post-card-content'>
                     <h2 className='post-card-preview'>{postTitleTrim(title)}</h2>
                     <footer className='post-card-footer'>
-                        <div className='post-card-actions'><MdComment className='post-card-icon' /><span className='post-card-text'>Comments</span></div>
+                        <Link to={`/post/${subreddit}/${id}`}>
+                            <div className='post-card-actions'><MdComment className='post-card-icon' /><span className='post-card-text'>Comments</span></div>
+                        </Link>    
                         <div className='post-card-actions'><BiLinkExternal className='post-card-icon' /><span className='post-card-text'> Details </span></div>
                         <div className='post-card-actions'><BsShareFill className='post-card-icon' /><span className='post-card-text'> Share </span></div>
                     </footer>

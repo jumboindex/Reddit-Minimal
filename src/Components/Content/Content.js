@@ -5,6 +5,7 @@ import FilterMenu from "../FilterMenu/FilterMenu";
 import PostContainer from "../PostContainer/PostContainer";
 import SubredditMenu from "../SubredditMenu/SubredditMenu";
 
+
 const Content = () => {
     
     const dispatch = useDispatch();
@@ -13,8 +14,8 @@ const Content = () => {
         dispatch(fetchInitialPosts());
     },[dispatch]);
 
-    let initialPosts = useSelector(selectInitialPosts);
-
+    const initialPosts = useSelector(selectInitialPosts);
+    
     return (
         <main data-testid='content' className='main'>
             <FilterMenu />
