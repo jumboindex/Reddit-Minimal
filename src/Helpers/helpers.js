@@ -88,3 +88,8 @@ export const getPostTime = (timeStamp) => {
     if (minutes > 0 ) return `${minutes} minuets ago`;
     return NaN + ' ago';
 }
+
+export const getDate = (timeStamp) => {
+    const date = new Date(timeStamp * 1000)
+    return date.toDateString().replace(/(\w{3}) /m, '');
+}

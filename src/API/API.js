@@ -72,10 +72,24 @@ const getPostWithComments = async ({subreddit, postID}) => {
     }
 };
 
+const getSubredditPosts = async (subreddit) => {
+    try {
+        const response = await fetch(`${apiEndPoint}${subreddit}.json`);
+        if (response.ok) {
+            const jsonResponse = await response.json();
+            return jsonResponse.data.children;
+        }
+        throw new Error('request failed' + response.statusText);
+    } catch (error) {
+        console.log(error);
+    }
+};
+
 export const API = {
     getInitialPosts,
     getSubreddit,
     getFeaturedSubreddits,
     getFilteredSubreddits,
-    getPostWithComments
+    getPostWithComments,
+    getSubredditPosts
 };
