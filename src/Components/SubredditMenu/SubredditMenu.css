@@ -1,6 +1,6 @@
 .subreddit-menu {
     background-color:#ffffff ;
-    width: 300px;
+    width: 18.75em;
     height:fit-content;
     position: relative;
     left: 18%;
@@ -15,7 +15,7 @@
     text-transform: uppercase;
     font-size: 0.875rem;
     font-weight: 575;
-    letter-spacing: 0.02;
+    letter-spacing: 0.02em;
     line-height: 1.75rem;
     color: #9e9e9e;
     margin: 0.5rem 0 0 1.5rem;
