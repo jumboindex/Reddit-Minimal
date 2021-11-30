@@ -38,7 +38,9 @@ const PostCard = ({ data }) => {
                         <Link to={`/post/${subreddit}/${id}`}>
                             <div className='post-card-actions'><MdComment className='post-card-icon' /><span className='post-card-text'>Comments</span></div>
                         </Link>    
+                        <Link to={`/post/${subreddit}/${id}`}>
                         <div className='post-card-actions'><BiLinkExternal className='post-card-icon' /><span className='post-card-text'> Details </span></div>
+                        </Link>
                         <div className='post-card-actions'><BsShareFill className='post-card-icon' /><span className='post-card-text'> Share </span></div>
                     </footer>
                 </div>
@@ -54,4 +56,3 @@ const PostCard = ({ data }) => {
 export default PostCard;
 
 
-//{subreddit ? <img src={subreddit.subredditIcon} alt={subreddit_name_prefixed + ' icon'} className='post-card-img' /> : null}

@@ -85,11 +85,25 @@ const getSubredditPosts = async (subreddit) => {
     }
 };
 
+const getUserDetails = async (userName) => {
+    try {
+        const response = await fetch(`${apiEndPoint}user/${userName}/about.json`);
+        if (response.ok) {
+            const jsonResponse = await response.json();
+            return jsonResponse.data
+        }
+        throw new Error('request failed' + response.statusText);
+    } catch (error) {
+        console.log(error);
+    }
+}
+
 export const API = {
     getInitialPosts,
     getSubreddit,
     getFeaturedSubreddits,
     getFilteredSubreddits,
     getPostWithComments,
-    getSubredditPosts
+    getSubredditPosts,
+    getUserDetails
 };

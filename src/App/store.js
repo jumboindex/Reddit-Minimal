@@ -6,6 +6,7 @@ import featuredSubredditSliceReducer from "../Features/featuredSubredditSlice/fe
 import filteredPostsSliceReducer from "../Features/filterSlice/filterSlice";
 import postWithCommentsReducer from "../Features/postWithCommentsSlice/postWithCommentsSlice";
 import subreadditPostSliceReducer from "../Features/subredditPosts/subreadditPostSlice";
+import userDetailsReducer from "../Features/userDetailsSlice/userDetailsSlice";
 
 const store = configureStore({
     reducer: {
@@ -15,7 +16,8 @@ const store = configureStore({
         featuredSubreddits: featuredSubredditSliceReducer,
         filteredPosts: filteredPostsSliceReducer,
         postWithComments: postWithCommentsReducer,
-        subredditPosts: subreadditPostSliceReducer
+        subredditPosts: subreadditPostSliceReducer,
+        userDetails: userDetailsReducer
     }
 })
 

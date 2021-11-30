@@ -1,6 +1,9 @@
 import Markdown from "markdown-to-jsx";
+import { useEffect } from "react";
 import { BsBoxArrowInUpRight } from 'react-icons/bs'
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { fetchUserDetails } from "../../Features/userDetailsSlice/userDetailsSlice";
 import { getPostTime, mediaPreview, upvoteFormat } from "../../Helpers/helpers";
 import CommentCard from "../CommentCard/CommentCard";
 import UserIcon from "../UserIcon/UserIcon";
@@ -11,14 +14,21 @@ import './Thread.css';
 const Thread = ({ post, comments, params }) => {
 
     let shouldLoad = Object.keys(post).length !== 0 ? true : false; 
+    const dispatch = useDispatch();
     const {subreddit, postID } = params;
     const { ups, upvote_ratio, title, author, created, post_hint, url, media, selftext}  = post;
     
+    useEffect(() => {
+        if (shouldLoad) {
+        dispatch(fetchUserDetails(author)) }
+    }, [shouldLoad, author, dispatch])
+
+    const userData = useSelector( state => state.userDetails.userDetails[author]);
 
     if (shouldLoad) return (
         <article className='thread-container'>
             <nav>
-                <span className='subreddit-path font'> <Link to='/'> Home </Link> / Subreddits / {subreddit} / {postID} </span>
+                <span className='subreddit-path font'> <Link to='/'> Home </Link> / Subreddits / <Link to={`/subreddit/${subreddit}`}> {subreddit} </Link> / {postID} </span>
             </nav>    
             <header className='thread-header flex' >
                 <div className='upvotes-container flex'>
@@ -33,7 +43,7 @@ const Thread = ({ post, comments, params }) => {
                 <section className='thread-details flex'>
                     <div className='thread-user-container flex'>
                         <div className='thread-image-container'> 
-                            <UserIcon />
+                            <UserIcon userData={userData} />
                         </div>
                         <span className='post-user-name'> {author} </span>
                         <span className='post-time'> {getPostTime(created)}</span>
@@ -99,5 +109,3 @@ const Thread = ({ post, comments, params }) => {
 
 export default Thread;
 
-//upvote_ratio.toString().slice(2,4)
-//{selftext ? <div dangerouslySetInnerHTML={{__html:html}}></div> : null}

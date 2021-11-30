@@ -19,11 +19,10 @@ const PostView = () => {
 
     const postData = useSelector(selectPost);
     const commentData = useSelector(selectComments);
-
     return (
         <main className='main'>
             <SubredditMenu />
-            <Thread post={postData} comments={commentData} params={params} />
+            { postData && <Thread post={postData} comments={commentData} params={params} />}   
         </main>
         )
 
