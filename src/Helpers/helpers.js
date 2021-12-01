@@ -52,6 +52,7 @@ export const postTitleTrim = (postTitle) => {
 }
 
 export const upvoteFormat = (upvotes) => {
+    if (upvotes === undefined) return 0;
     let str = upvotes.toString();
     if (upvotes > 1000000) {
         return str.slice(0,1) + '.' + str.slice(1,2) + 'M';

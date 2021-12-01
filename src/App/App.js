@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import FilteredContent from '../Components/FilteredContent/FilteredContent';
 import PostView from '../Components/PostVeiw/PostView';
 import SubredditVeiw from '../Components/SubredditView/SubredditView';
+import SearchResults from '../Components/SearchResults/SearchResults';
 
 
 const App = () => {
@@ -23,6 +24,7 @@ const App = () => {
             <Route path='/top' element={<FilteredContent  />} />
             <Route path='/post/:subreddit/:postID' element={<PostView />} />
             <Route path='/subreddit/:subreddit' element={<SubredditVeiw />} />
+            <Route path='/search/:searchTerm' element={<SearchResults />} />
           </Routes>
         </Router>
       </Provider>  

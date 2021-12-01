@@ -64,7 +64,7 @@ const getPostWithComments = async ({subreddit, postID}) => {
         const response = await fetch(`${apiEndPoint}r/${subreddit}/comments/${postID}.json`, initialOptions);
         if (response.ok) {
             const jsonResponse = await response.json();
-            return jsonResponse
+            return jsonResponse;
         }
         throw new Error('request failed' + response.statusText);
     } catch (error) {
@@ -90,7 +90,20 @@ const getUserDetails = async (userName) => {
         const response = await fetch(`${apiEndPoint}user/${userName}/about.json`);
         if (response.ok) {
             const jsonResponse = await response.json();
-            return jsonResponse.data
+            return jsonResponse.data;
+        }
+        throw new Error('request failed' + response.statusText);
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+const getSearchResults = async (searchTerm) => {
+    try {
+        const response = await fetch(`${apiEndPoint}search.json?q=${searchTerm}`);
+        if (response.ok) {
+            const jsonResponse = await response.json();
+            return jsonResponse.data.children;
         }
         throw new Error('request failed' + response.statusText);
     } catch (error) {
@@ -105,5 +118,6 @@ export const API = {
     getFilteredSubreddits,
     getPostWithComments,
     getSubredditPosts,
-    getUserDetails
+    getUserDetails,
+    getSearchResults
 };
