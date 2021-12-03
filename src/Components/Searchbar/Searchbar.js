@@ -7,31 +7,47 @@ import { FcSearch } from 'react-icons/fc'
 
 const Searchbar = () => {
     const navigate = useNavigate();
-    const [searchText, setSearchText] = useState('Search..');
+    const [searchText, setSearchText] = useState('');
 
-
-    const  handleSearchTextChange = (e) => {
-        if (e.key === 'Enter' || e.key === 'NumpadEnter') {
-           return navigate(`/search/${e.target.value}`);
+    const handleSearchIconClick = () => {
+        if(searchText !== '') {
+            navigate(`/search/${searchText}`);
+            return setSearchText('');
         } else return;
     }
 
     useEffect(() => {
-        document.addEventListener('keydown', handleSearchTextChange)
-        return () => document.removeEventListener('keydown', handleSearchTextChange)
-    }, [searchText]);
+
+        const  handleSearchTextChange = (e) => {
+            if (e.key === 'Enter' || e.key === 'NumpadEnter') {
+                navigate(`/search/${e.target.value}`);
+                 return setSearchText('');
+                } else return;
+        }
+
+        document.addEventListener('keydown', handleSearchTextChange);
+
+        return () => document.removeEventListener('keydown', handleSearchTextChange);
+    }, [searchText, navigate]);
 
     return ( 
-        <div data-testid='searchbar' className='search-container' tabIndex='1'>
+        <div 
+            data-testid='searchbar' 
+            className='search-container' 
+            tabIndex='1'>
             <input className='searchbar' 
                     type='text' 
-                    placeholder={searchText} 
-                    onKeyPress={(e) => setSearchText(e.target.value)}
+                    value={searchText}
+                    placeholder='Search...' 
+                    onChange={(e) => setSearchText(e.target.value)}
                     />
-            <Spinner animation="border" role="status">
-                {/* <span className="visually-hidden">Loading...</span> */}
-            </Spinner>     
-            <FcSearch className='search-icon' />
+
+                    {searchText !== '' && 
+                    <Spinner animation="border" role="status" >
+                        <span className="visually-hidden">Loading...</span>
+                    </Spinner>}         
+              
+            <FcSearch className='search-icon' onClick={() => handleSearchIconClick()} />
         </div>
         
     )

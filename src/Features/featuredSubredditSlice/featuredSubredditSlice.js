@@ -3,7 +3,7 @@ import { API } from "../../API/API";
 
 const initialState = {
     featuredSubreddits: [],
-    loading: false,
+    loading: true,
     error: false
 }
 

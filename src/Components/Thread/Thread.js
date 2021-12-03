@@ -17,7 +17,7 @@ const Thread = ({ post, comments, params }) => {
     const dispatch = useDispatch();
     const {subreddit, postID } = params;
     const { ups, upvote_ratio, title, author, created, post_hint, url, media, selftext}  = post;
-    
+    console.log(upvote_ratio)
     useEffect(() => {
         if (shouldLoad) {
         dispatch(fetchUserDetails(author)) }
@@ -36,8 +36,8 @@ const Thread = ({ post, comments, params }) => {
                         <BsBoxArrowInUpRight />
                          { ups ? upvoteFormat(ups) : '...'}
                     </span>
-                    <span className='ratio'>
-                      {upvote_ratio.toString().slice(2,4)}% ratio 
+                    <span className='thread-ratio'>
+                      { upvote_ratio > 0.01 ? upvote_ratio.toString().slice(2,4): 1 }% ratio 
                     </span>
                 </div>
                 <section className='thread-details flex'>

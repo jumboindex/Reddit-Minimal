@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { clearSubredditPosts, fetchSubredditPosts, selectSubredditPosts } from "../../Features/subredditPosts/subreadditPostSlice";
+import { clearSubredditPosts, fetchSubredditPosts, selectSubredditPosts, selectSubredditPostsError, selectSubredditPostsLoading } from "../../Features/subredditPosts/subreadditPostSlice";
 import { fetchSubreddit } from "../../Features/subredditSlice/subredditSlice";
 import AboutSubreddit from "../AboutSubreddit/AboutSubreddit";
 import PostContainer from "../PostContainer/PostContainer";
@@ -22,12 +22,14 @@ const SubredditVeiw = () => {
 
     const data = useSelector(state => state.subreddits.subreddits[subredditNamePrefixed]);
     const posts = useSelector(selectSubredditPosts);
+    const postLoading = useSelector(selectSubredditPostsLoading);
+    const postError = useSelector(selectSubredditPostsError);
 
     return (
         <main className='main'>
             { data ?  <AboutSubreddit data={data} /> : null }
             <SubredditMenu />
-            <PostContainer data={posts} />
+            <PostContainer data={posts} loading={postLoading} />
         </main>
     );
 

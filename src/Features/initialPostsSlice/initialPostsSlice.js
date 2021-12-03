@@ -3,7 +3,7 @@ import { API } from "../../API/API";
 
 const initialState = {
     posts: [],
-    loading: false,
+    loading: true,
     error: false
 }
 
@@ -17,7 +17,7 @@ const options = {
     name: 'initialPostsSlice',
     initialState: initialState,
     reducers: {
-        clearPosts: state => state.posts = []
+        clearPosts: state => {state.posts = []}
     },
     extraReducers: (builder) => {
         builder.addCase(fetchInitialPosts.pending, (state, action) => {
@@ -41,6 +41,8 @@ const options = {
 const initialPostsSlice = createSlice(options);
 
 export const selectInitialPosts = state => state.initialPosts.posts;
+export const selectInitialPostsLoading = state => state.initialPosts.loading;
+export const selectInitialPostsError = state => state.initialPosts.error;
 
 export default initialPostsSlice.reducer;
 export const { clearPosts } = initialPostsSlice.actions;

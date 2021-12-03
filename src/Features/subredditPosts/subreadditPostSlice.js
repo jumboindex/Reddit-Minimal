@@ -3,7 +3,7 @@ import { API } from "../../API/API";
 
 const initialState = {
     posts: [],
-    loading: false,
+    loading: true,
     error: false
 }
 
@@ -41,6 +41,8 @@ const options = {
 const subredditPostsSlice = createSlice(options);
 
 export const selectSubredditPosts = state => state.subredditPosts.posts;
+export const selectSubredditPostsLoading = state => state.subredditPosts.loading;
+export const selectSubredditPostsError = state => state.subredditPosts.error;
 
 export default subredditPostsSlice.reducer;
 export const { clearSubredditPosts } = subredditPostsSlice.actions;

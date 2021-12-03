@@ -3,7 +3,7 @@ import { API } from "../../API/API";
 
 const initialState = {
     posts: [],
-    loading: false,
+    loading: true,
     error: false
 }
 
@@ -17,7 +17,7 @@ const options = {
     name: 'filteredPosts',
     initialState: initialState,
     reducers: {
-        clearPosts: state => state.posts = []
+        clearPosts: state => {state.posts = []}
     },
     extraReducers: (builder) => {
         builder.addCase(fetchFilteredPosts.pending, (state, action) => {
@@ -41,6 +41,8 @@ const options = {
 const filteredPostsSlice = createSlice(options);
 
 export const selectFilteredPosts = state => state.filteredPosts.posts;
+export const selectFilteredPostsLoading = state => state.filteredPosts.loading;
+export const selectFilteredPostsError = state => state.filteredPosts.error;
 
 export default filteredPostsSlice.reducer;
 export const { clearPosts } = filteredPostsSlice.actions;
