@@ -6,15 +6,15 @@ import { Link } from "react-router-dom";
 import { fetchUserDetails } from "../../Features/userDetailsSlice/userDetailsSlice";
 import { getPostTime, mediaPreview, upvoteFormat } from "../../Helpers/helpers";
 import CommentCard from "../CommentCard/CommentCard";
+import ErrorCard from "../ErrorCard/ErrorCard";
 import SkeletonThread from "../SkeletonComponents/SkeletonThread";
 import UserIcon from "../UserIcon/UserIcon";
 import './Thread.css';
 
 
 
-const Thread = ({ post, comments, params }) => {
+const Thread = ({ post, comments, params, loading, error, shouldLoad }) => {
 
-    let shouldLoad = Object.keys(post).length !== 0 ? true : false; 
     const dispatch = useDispatch();
     const {subreddit, postID } = params;
     const { ups, upvote_ratio, title, author, created, post_hint, url, media, selftext}  = post;
@@ -26,7 +26,14 @@ const Thread = ({ post, comments, params }) => {
 
     const userData = useSelector( state => state.userDetails.userDetails[author]);
 
-    if (shouldLoad) return (
+
+    if (error) return (
+        <section className='post-container'>
+            <ErrorCard />
+        </section>
+    );
+
+    if (shouldLoad && !loading) return (
         <article className='thread-container'>
             <nav>
                 <span className='subreddit-path font'> <Link to='/'> Home </Link> / Subreddits / <Link to={`/subreddit/${subreddit}`}> {subreddit} </Link> / {postID} </span>
@@ -71,6 +78,8 @@ const Thread = ({ post, comments, params }) => {
     return (
         <SkeletonThread /> 
     )
+
+   
 };
 
 export default Thread;

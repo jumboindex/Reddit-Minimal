@@ -15,8 +15,9 @@ const SubredditMenu = () => {
    const loading = useSelector(selectFeaturedSubredditsLoading);
    const error = useSelector(selectFeaturedSubredditsError);
 
+
    if (loading) return (
-    <aside data-testid='subreddit-menu' className='subreddit-menu'>
+        <aside data-testid='subreddit-menu' className='subreddit-menu'>
             <h3 className='subreddit-menu-heading'>Featured Subreddits</h3>
             <div data-testid='subreddit-card-container' className='subreddit-card-container'>
                 <SkeletonSubredditCard />
@@ -32,6 +33,16 @@ const SubredditMenu = () => {
             </div>
         </aside>
    );
+
+   if (error) return (
+        <aside data-testid='subreddit-menu' className='subreddit-menu'>
+            <h3 className='subreddit-menu-heading'>Featured Subreddits </h3>
+            <div data-testid='subreddit-card-container' className='subreddit-card-container'>
+                <p style={{fontSize: '1rem'}} > Failed To Load Subreddits  </p>
+            </div>
+        </aside>
+   );
+
     return (
         <aside data-testid='subreddit-menu' className='subreddit-menu'>
             <h3 className='subreddit-menu-heading'>Featured Subreddits</h3>

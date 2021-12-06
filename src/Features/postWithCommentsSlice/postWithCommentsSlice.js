@@ -4,7 +4,7 @@ import { API } from "../../API/API";
 const initialState = {
     post: {},
     comments:[],
-    loading: false,
+    loading: true,
     error: false
 }
 

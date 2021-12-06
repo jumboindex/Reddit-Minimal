@@ -1,15 +1,16 @@
 import React from "react";
+import ErrorCard from "../ErrorCard/ErrorCard";
 import NoResultsCard from "../NoResultsCard/NoResultsCard";
 import PostCard from "../Posts/PostCard";
 import SkeletonPostCard from "../SkeletonComponents/SkeletonPostCard";
 import './PostContainer.css';
 
-const PostContainer = ({ data, loading, noResults }) => {
-    const number = 24;
+const PostContainer = ({ data, loading, noResults, error }) => {
+    const skeletonNumber = 24;
 
     if (loading) return (
         <section data-testid='post-container' className='post-container'>
-            { [...Array(number)].map((n, index) => {
+            { [...Array(skeletonNumber)].map((n, index) => {
                 return <SkeletonPostCard key={index} />
             })}            
         </section>); 
@@ -17,6 +18,12 @@ const PostContainer = ({ data, loading, noResults }) => {
     if (noResults) return (
         <section data-testid='post-container' className='post-container'>
             <NoResultsCard />
+        </section>
+    );
+
+    if (error) return (
+        <section data-testid='post-container' className='post-container'>
+            <ErrorCard />
         </section>
     );
 

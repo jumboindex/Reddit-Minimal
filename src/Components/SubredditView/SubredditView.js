@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { clearSubredditPosts, fetchSubredditPosts, selectSubredditPosts, selectSubredditPostsError, selectSubredditPostsLoading } from "../../Features/subredditPosts/subreadditPostSlice";
-import { fetchSubreddit, selectSubredditSliceError, selectSubredditSliceLoading } from "../../Features/subredditSlice/subredditSlice";
+import { fetchSubreddit, selectSubredditSliceLoading } from "../../Features/subredditSlice/subredditSlice";
 import AboutSubreddit from "../AboutSubreddit/AboutSubreddit";
 import PostContainer from "../PostContainer/PostContainer";
 import SkeletonAboutSubreddit from "../SkeletonComponents/SkeletonAboutSubreddit";
@@ -23,7 +23,6 @@ const SubredditVeiw = () => {
 
     const data = useSelector(state => state.subreddits.subreddits[subredditNamePrefixed]);
     const subredditLoading =  useSelector(selectSubredditSliceLoading);
-    const subredditError = useSelector(selectSubredditSliceError); 
     
     const posts = useSelector(selectSubredditPosts);
     const postLoading = useSelector(selectSubredditPostsLoading);
@@ -33,7 +32,7 @@ const SubredditVeiw = () => {
         <main className='main'>
             { data  && ! subredditLoading ?  <AboutSubreddit data={data} /> : <SkeletonAboutSubreddit />}
             <SubredditMenu />
-            <PostContainer data={posts} loading={postLoading} />
+            <PostContainer data={posts} loading={postLoading} error={postError} />
         </main>
     );
 

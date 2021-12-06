@@ -8,8 +8,8 @@ const NoMatch = () => {
     return (
         <main className='main-404'>
             <div className='image-container-404'> 
-                <a href='https://youtu.be/onYiiDy-VV4' target='_blank'>
-                    <img src={notFoundImage} alt='404 image Pete and Bas' />
+                <a href='https://youtu.be/onYiiDy-VV4' target='_blank' rel="noreferrer">
+                    <img src={notFoundImage}  alt='404 Pete and Bas' />
                 </a>
             </div>
             <p> <MdError /> No match found! </p>

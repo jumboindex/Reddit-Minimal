@@ -27,7 +27,7 @@ const Content = () => {
         <main data-testid='content' className='main'>
             <FilterMenu />
             <SubredditMenu />
-            <PostContainer data={initialPosts} loading={loading} />
+            <PostContainer data={initialPosts} loading={loading} error={error} />
         </main>
     )      
 };
