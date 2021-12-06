@@ -7,7 +7,7 @@ import Thread from "../Thread/Thread";
 
 const PostView = () => {
     const dispatch = useDispatch();
-    const params = useParams()
+    const params = useParams();
 
     useEffect(() => {
     dispatch(fetchPostWithComments(params))

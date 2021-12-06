@@ -2,9 +2,9 @@ import React from "react";
 import NoResultsCard from "../NoResultsCard/NoResultsCard";
 import PostCard from "../Posts/PostCard";
 import SkeletonPostCard from "../SkeletonComponents/SkeletonPostCard/SkeletonPostCard";
-import './PostContainer.css'
+import './PostContainer.css';
 
-const PostContainer = ({ data, loading }) => {
+const PostContainer = ({ data, loading, noResults }) => {
     const number = 24;
 
     if (loading) return (
@@ -13,7 +13,8 @@ const PostContainer = ({ data, loading }) => {
                 return <SkeletonPostCard key={index} />
             })}            
         </section>); 
-    if (data.length === 0 && !loading) return (
+        
+    if (noResults) return (
         <section data-testid='post-container' className='post-container'>
             <NoResultsCard />
         </section>

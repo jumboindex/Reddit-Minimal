@@ -15,7 +15,7 @@ const FilteredContent = () => {
          const pathname = params.pathname.substring(1);
          dispatch(fetchFilteredPosts(pathname));
          return () => {
-             dispatch(clearPosts());
+            dispatch(clearPosts());
          }
      }, [dispatch, params.pathname])
 

@@ -41,6 +41,20 @@ a {
     width: 80%;
 }
 
+.skeleton-title {
+    width: 100%;
+    height: 1.5rem;
+    border-radius: 0.125rem;
+    margin-left: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.skeleton-title:last-child {
+    margin-bottom: 0;
+    width: 80%;
+}
+
+
 @keyframes skeleton-loading {
     0% {
         background-color: hsl(200, 20%, 70%);

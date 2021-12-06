@@ -8,19 +8,20 @@ import SubredditMenu from "../SubredditMenu/SubredditMenu";
 
 const SearchResults = () => {
     const dispatch = useDispatch();
-    const params = useParams()
+    const params = useParams();
     useEffect(() => {
         dispatch(fetchSearchResults(params.searchTerm))
         return () => {dispatch(clearSearchResults())}
     }, [params, dispatch])
 
     const posts = useSelector(selectSearchResults);
-    const loading = useSelector(selectSearchResultsLoading)
+    const loading = useSelector(selectSearchResultsLoading);
+    const noResults = posts.length === 0 && !loading ? true : false;
 
     return (
         <main className='main'>
             <SubredditMenu />
-            <PostContainer data={posts} loading={loading} />
+            <PostContainer data={posts} loading={loading} noResults={noResults} />
         </main>
     )
 };
