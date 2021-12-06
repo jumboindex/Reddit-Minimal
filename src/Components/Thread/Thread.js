@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { fetchUserDetails } from "../../Features/userDetailsSlice/userDetailsSlice";
 import { getPostTime, mediaPreview, upvoteFormat } from "../../Helpers/helpers";
 import CommentCard from "../CommentCard/CommentCard";
-import SkeletonThread from "../SkeletonComponents/SkeletonPostCard/SkeletonThread";
+import SkeletonThread from "../SkeletonComponents/SkeletonThread";
 import UserIcon from "../UserIcon/UserIcon";
 import './Thread.css';
 

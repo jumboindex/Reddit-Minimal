@@ -5,9 +5,9 @@ import SubredditIcon from "../SubredditIcon/SubredditIcon";
 import './SubredditCard.css';
 
 const SubredditCard = ({ data }) => {
+
     const { display_name_prefixed, subscribers, icon_img, display_name} = data.data;
 
-   
     return (
         <Link to={`/subreddit/${display_name}`}>
             <div data-testid='subreddit-card' className='subreddit-card'>

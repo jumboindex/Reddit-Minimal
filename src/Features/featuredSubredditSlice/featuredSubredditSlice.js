@@ -35,6 +35,8 @@ const options = {
 }
 
 export const selectFeaturedSubreddits = state => state.featuredSubreddits.featuredSubreddits;
+export const selectFeaturedSubredditsLoading = state =>state.featuredSubreddits.loading;
+export const selectFeaturedSubredditsError = state => state.featuredSubreddits.error;
 
 const featuredSubredditSlice = createSlice(options);
 

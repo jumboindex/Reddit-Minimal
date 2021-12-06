@@ -1,0 +1,26 @@
+.main-404 {
+    display: flex;
+    align-items: center;
+    flex-flow: column nowrap;
+}
+
+.image-container-404 {
+    height: fit-content;
+    margin: 2em 0 1em;
+}
+
+.main-404 p {
+    margin-bottom: 0.5em;
+}
+
+.button-404 {
+    margin: 1em;
+    border: solid 1px blue;
+    padding: 1rem;
+    border-radius: 5%;
+    background-color: white;
+}
+
+.button-404:hover {
+    background-color: blueviolet;
+}

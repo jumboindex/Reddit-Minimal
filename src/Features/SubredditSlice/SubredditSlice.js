@@ -3,7 +3,7 @@ import { API } from "../../API/API";
 
 const initialState = {
     subreddits: {},
-    loading: false,
+    loading: true,
     error: false
 }
 
@@ -35,6 +35,8 @@ const options = {
     }
 }
 
+export const selectSubredditSliceLoading = state => state.subreddits.loading;
+export const selectSubredditSliceError = state => state.subreddits.error;
 
 const subredditSlice = createSlice(options);
 

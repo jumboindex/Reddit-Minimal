@@ -1,7 +1,7 @@
 import React from "react";
 import NoResultsCard from "../NoResultsCard/NoResultsCard";
 import PostCard from "../Posts/PostCard";
-import SkeletonPostCard from "../SkeletonComponents/SkeletonPostCard/SkeletonPostCard";
+import SkeletonPostCard from "../SkeletonComponents/SkeletonPostCard";
 import './PostContainer.css';
 
 const PostContainer = ({ data, loading, noResults }) => {

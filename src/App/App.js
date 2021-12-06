@@ -8,6 +8,7 @@ import FilteredContent from '../Components/FilteredContent/FilteredContent';
 import PostView from '../Components/PostVeiw/PostView';
 import SubredditVeiw from '../Components/SubredditView/SubredditView';
 import SearchResults from '../Components/SearchResults/SearchResults';
+import NoMatch from '../Components/NoMatch/NoMatch';
 
 
 const App = () => {
@@ -25,6 +26,7 @@ const App = () => {
             <Route path='/post/:subreddit/:postID' element={<PostView />} />
             <Route path='/subreddit/:subreddit' element={<SubredditVeiw />} />
             <Route path='/search/:searchTerm' element={<SearchResults />} />
+            <Route path='*' element={<NoMatch />} />
           </Routes>
         </Router>
       </Provider>  
