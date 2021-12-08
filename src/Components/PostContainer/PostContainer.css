@@ -1,13 +1,11 @@
 .post-container {
-    height:1200px;
-    width: 850px;
+    height: fit-content;
+    width: 53.125em;
     position: absolute;
-    left: 35%;
-    top: 10%;
-}
-
-.post-container:first-child {
-    margin-top: 0;
+    left: 33%;
+    top: 0;
+    margin-left: 2em;
+    margin-top: 1.5em;
 }
 
 span, h2 {
@@ -16,25 +14,33 @@ span, h2 {
 
 .post-card {
     border:#d6d6d6 1px solid;
-    height: 200px;
-    margin: 1rem 0;
+    min-height: 14em;
+    max-height: 16em;
+    margin: 1em 0;
     background-color: #ffffff;
     display: flex;
-    align-items: center;
+    flex-flow: row nowrap;
     justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+}
+
+.post-card:first-child {
+    margin-top: 0;
 }
 
 .post-card:hover {
     transform: scale(1.005, 1.005);
-    box-shadow: 1px 2px rgb(165, 162, 162);
+    box-shadow: 1px 2px 2px rgb(165, 162, 162);
 }
 
 .post-card-container {
-    height: 100%;
+    min-height: 100%;
     width: 70%;
     display: flex;
     flex-flow: column nowrap;
-
+    align-self: stretch;
+    justify-content: space-between;
 }
 
 .post-card-title {
@@ -42,16 +48,16 @@ span, h2 {
     flex-flow: row nowrap;
     justify-content: flex-start;
     align-items: center;
-    padding-top: 0.75rem;
-    padding-bottom: 0.75rem;
+    padding-top: 0.75em;
+    padding-bottom: 0.75em;
 }
 
 .post-card-img-container {
-    height: 40px;
-    width: 40px;
+    height: 2.5em;
+    width: 2.5em;
     border-radius: 50%;
     background-color: #bdbdbd;
-    margin: 0 1rem;
+    margin: 0 1em;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -64,15 +70,15 @@ span, h2 {
 }
 
 .no-image {
-    height: 20px;
-    width: 20px;
+    height: 1.25em;
+    width: 1.25em;
     color: white;
 }
 
 .post-card-link {
     font-size: 0.875rem;
     font-weight: 550;
-    margin-right: 1rem;
+    margin-right: 1em;
     line-height: 1.4rem;
 }
 
@@ -80,7 +86,6 @@ span, h2 {
     font-weight: 400;
     font-size: 0.813rem; 
     line-height: 1.3rem;
-   
 }
 
 .post-card-content {
@@ -91,14 +96,13 @@ span, h2 {
 }
 
 .post-card-preview {
-    margin: 1rem 1rem;
+    margin: 1em 1em;
     font-size: 1.094rem;
     font-weight: 500;
-    
 }
 
 .post-card-footer {
-    padding: 0.5rem;
+    padding: 0.5em;
     display: flex;
     flex-flow: row nowrap;
 }
@@ -109,7 +113,7 @@ span, h2 {
     justify-content:space-between;
     align-items: center;
     cursor:pointer;
-    padding: 0.5rem 0.25rem;
+    padding: 0.5em 0.25em;
 }
 
 .post-card-actions:hover {
@@ -118,9 +122,9 @@ span, h2 {
 
 .post-card-icon {
     color:#757575;
-    margin: 0 0.5rem;
-    height: 1.1rem;
-    width: 1.1rem;
+    margin: 0 0.5em;
+    height: 1.1em;
+    width: 1.1em;
 }
 
 .post-card-text {
@@ -128,11 +132,12 @@ span, h2 {
     font-size: 0.875rem;
     font-weight: 500;
     text-transform: uppercase;
-    margin: 0 0.25rem;
+    margin: 0 0.25em;
 }
 
 .post-card-votes {
-    height: 100%;
+    min-height: 100%;
+    align-self: stretch;
     width: 9%;
     background-color: #ebebeb;
     border-left: 1px solid rgba(0,0,0, 0.16);
@@ -140,6 +145,9 @@ span, h2 {
     justify-content: center;
     align-items: center;
     color: rgba(0, 0, 0, 0.54);
+}
+
+.post-card-votes h2 {
     font-size: 1.25rem; 
     font-weight: 500;
     line-height: 1.5rem;
@@ -150,18 +158,30 @@ span, h2 {
 }
 
 .post-card-media-preview {
-    height: 80%;
-    width: 200px;
-    margin-right: 1rem;
+    width: 12.5em;
+    max-height: 90%;
     text-align: center;
+    margin: 1em;
+    align-self: center;
+    display: flex;
+    flex: 1 1 auto;
+    align-items: stretch;
+}
+
+.post-card-media-container {
+    max-height: 12em;
+    max-width: 100%;
+    flex-basis: 12.5em;
 }
 
 .media-preview {
-    height: 100%;
+    max-height: 100%;
     width: 100%;
+    object-fit: cover;
 }
+
 .post-card-media-preview video {
-    height: 100%;
+    max-height: 100%;
     width: 100%;
     object-fit: cover;
 }
@@ -180,16 +200,87 @@ span, h2 {
     align-items: center;
     justify-content: center;
 }
+
 .external-link a {
     text-decoration: none;
+    display: flex;
+    flex-flow: column wrap;
 }
 
 .external-link a span {
     border: solid 1px blue;
-    padding: 0.5rem;
+    padding: 0.5em;
     border-radius: 5%;
 }
 
 .external-link a span:hover {
     background-color: blueviolet;
+    color: white;
 }
+
+@media screen and (min-width: 1127px) and (max-width: 1690px) {
+   
+    .post-container {
+        max-width: 45em;
+        margin-left: 0.5em;
+    }
+    
+    .post-card-votes h2 {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (min-width: 816px) and (max-width: 1126px) {
+
+    .post-container {
+        max-width: 37em;
+        margin-left: 0.5em;
+    }
+    .post-card-votes h2 {
+        font-size: 0.8rem;
+    }
+    .post-card {
+        max-width: 36em;
+    }
+
+    .post-card-votes {
+        min-width: 3.214em;
+    }
+
+}
+
+@media screen and (min-width: 570px) and (max-width: 815px) { 
+    .post-container {
+        max-width: 30em;
+        margin-left: 0.5em;
+        left: 35%;
+    }
+    .post-card-votes h2 {
+        font-size: 0.75rem;
+    }
+
+    .post-card {
+        max-width: 30em;
+    }
+
+    .post-card-votes {  
+        min-width: 3.214em;
+    }
+}
+
+@media screen and (max-width: 569px) {
+    .post-container {
+        margin-top: 2em;
+        max-width: 34.5em;
+        left: 2%;
+    }
+
+    .post-card-votes {
+        min-width: 3.214em;
+    }
+
+    .post-card-votes h2 {
+        font-size: 1rem;
+    }
+}
+

@@ -45,7 +45,12 @@ const PostCard = ({ data }) => {
                     </footer>
                 </div>
             </div> 
-            { post_hint ? <div className='post-card-media-preview'>{mediaPreview(post_hint, url, media)} </div> : null}
+            { post_hint ? 
+                <div className='post-card-media-preview'>
+                    <div className='post-card-media-container'>
+                    {mediaPreview(post_hint, url, media)} 
+                    </div>
+                </div> : null}
             <aside className='post-card-votes'>
                 <h2>{upvoteFormat(ups)}</h2>
             </aside>

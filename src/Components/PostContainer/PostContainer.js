@@ -10,9 +10,9 @@ const PostContainer = ({ data, loading, noResults, error }) => {
 
     if (loading) return (
         <section data-testid='post-container' className='post-container'>
-            { [...Array(skeletonNumber)].map((n, index) => {
-                return <SkeletonPostCard key={index} />
-            })}            
+        { [...Array(skeletonNumber)].map((n, index) => {
+            return <SkeletonPostCard key={index} />
+        })}         
         </section>); 
         
     if (noResults) return (
@@ -23,13 +23,13 @@ const PostContainer = ({ data, loading, noResults, error }) => {
 
     if (error) return (
         <section data-testid='post-container' className='post-container'>
-            <ErrorCard />
+            <ErrorCard />  
         </section>
     );
 
     return (
         <section data-testid='post-container' className='post-container'>
-             {data.map( (post, index) => 
+            {data.map( (post, index) => 
             <PostCard key={index} data={post} />)}
         </section>
     )

@@ -8,9 +8,9 @@ p, span, h3 {
     width:18.75em;
     height:fit-content;
     position: relative;
-    left: 18%;
-    top: 2vh;
-    margin-top: 1em;
+    left: 16%;
+    top: 1.438em;
+    margin-top: 1.5em;
     border-radius: 2%; 
 }
 
@@ -72,3 +72,37 @@ p, span, h3 {
 .creation-date {
     font-size: 0.875rem;
 }
+
+
+@media screen and (min-width: 1127px) and (max-width: 1690px) {
+   
+    .about {
+        left: 5%;
+    }
+}
+
+@media screen and (min-width: 816px) and (max-width: 1126px) {
+
+    .about {
+        left: 1%;
+    }
+}
+
+
+@media screen and (min-width: 570px) and (max-width: 815px) {
+
+    .about {
+        left: 0%;
+        width:16.5em;
+    }
+
+}    
+
+@media screen and (max-width: 569px) { 
+    .about {
+        display: none;
+    }
+
+}
+
+

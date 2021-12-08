@@ -8,6 +8,7 @@ import Thread from "../Thread/Thread";
 const PostView = () => {
     const dispatch = useDispatch();
     const params = useParams();
+    const windowWidth = window.innerWidth;
 
     useEffect(() => {
     dispatch(fetchPostWithComments(params))
@@ -24,7 +25,7 @@ const PostView = () => {
     const shouldLoad = Object.keys(postData).length !== 0 ? true : false; 
     return (
         <main className='main'>
-            <SubredditMenu />
+            <SubredditMenu /> 
             <Thread post={postData} 
                     comments={commentData} 
                     params={params} 

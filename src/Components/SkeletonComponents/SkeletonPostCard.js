@@ -23,7 +23,7 @@ return (
                                 margin: '0 0 1.5em 1em'}} >
                         </div>
                     </footer>
-                </div>
+                </div>    
             </div> 
             <aside className='post-card-votes'>
                 <div className='skeleton skeleton-detail'></div>

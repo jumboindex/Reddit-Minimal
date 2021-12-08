@@ -9,18 +9,18 @@ span, p {
 }
 
 .comment-card-user-details {
-    margin: 1rem 1rem 1.5rem 2rem;
-    padding-top: 1rem;
+    margin: 1em 1em 1.5em 2em;
+    padding-top: 1em;
 }
 
 .comment-card-username {
     font-size: 0.85rem;
     font-weight: 350;
-    margin-right: 0.5rem;
+    margin-right: 0.5em;
 }
 
 .comment-card-body {
-    margin: 0 2rem 1rem 2rem;
+    margin: 0 2em 1em 2em;
 }
 
 .comment-text {
@@ -29,8 +29,8 @@ span, p {
 }
 
 .comment-card-actions {
-    margin: 0 1rem 0 2rem;
-    padding-bottom: 0.5rem;
+    margin: 0 1em 0 2em;
+    padding-bottom: 0.5em;
     display: flex;
     align-items: center;
 }
@@ -43,14 +43,14 @@ span, p {
 }
 
 .comment-card-icon {
-    margin: 0 0.5rem;
+    margin: 0 0.5em;
 }
 
 .comment-card-share {
     display: flex;
     align-items: center;
-    margin-left: 1rem;
-    padding:0.5rem 0.5rem 0.5rem 0;
+    margin-left: 1em;
+    padding:0.5em 0.5em 0.5em 0;
 }
 
 .comment-card-share:hover {

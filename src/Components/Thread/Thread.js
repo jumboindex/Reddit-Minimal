@@ -12,7 +12,6 @@ import UserIcon from "../UserIcon/UserIcon";
 import './Thread.css';
 
 
-
 const Thread = ({ post, comments, params, loading, error, shouldLoad }) => {
 
     const dispatch = useDispatch();
@@ -35,7 +34,7 @@ const Thread = ({ post, comments, params, loading, error, shouldLoad }) => {
 
     if (shouldLoad && !loading) return (
         <article className='thread-container'>
-            <nav>
+            <nav className='thread-nav'>
                 <span className='subreddit-path font'> <Link to='/'> Home </Link> / Subreddits / <Link to={`/subreddit/${subreddit}`}> {subreddit} </Link> / {postID} </span>
             </nav>    
             <header className='thread-header flex' >
@@ -62,9 +61,13 @@ const Thread = ({ post, comments, params, loading, error, shouldLoad }) => {
                     </div>
                 </section>
             </header>
+            <br />
+           
             <section className='thread-body'>
                 {selftext ? <Markdown>{selftext}</Markdown> : null}
-                { post_hint ? <div className='thread-media-preview'>{mediaPreview(post_hint, url, media)} </div> : null}
+                { post_hint ? <div className='thread-media-preview'>
+                        {mediaPreview(post_hint, url, media)} 
+                    </div> : null}
             </section>
             <section className='thread-comments'>
                 <h2>Discussions</h2>

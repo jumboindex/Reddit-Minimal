@@ -1,12 +1,12 @@
 .subreddit-menu {
     background-color:#ffffff ;
-    width: 18.75em;
+    max-width: 18.75em;
     height:fit-content;
     position: relative;
-    left: 18%;
-    top: 2vh;
-    margin-top: 1em;
-    border-radius: 2%;    
+    left: 16%;
+    top: 1.438em;
+    margin-top: 1.5em;
+    border-radius: 5px;    
     padding-bottom: 1em;
 }
 
@@ -30,3 +30,36 @@
     margin: 0.25em 1em;
     padding-top: 1em;
 }
+
+
+@media screen and (min-width: 1127px) and (max-width: 1690px) {
+    
+    .subreddit-menu {
+        left: 5%;
+    }
+}
+
+@media screen and (min-width: 816px) and (max-width: 1126px) {
+
+    .subreddit-menu {
+        left: 1%;
+    }
+   
+}
+
+@media screen and (min-width: 570px) and (max-width: 815px) {
+
+    .subreddit-menu {
+        left: 0;
+        width: 16.5em;
+    }
+
+}    
+
+@media screen and (max-width: 569px) {
+
+    .subreddit-menu {
+        display: none;
+    }
+
+}    

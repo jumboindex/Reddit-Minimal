@@ -5,27 +5,21 @@ const SkeletonThread = () => {
 
     return ( 
         <article className='thread-container'>
-            <nav>
-                <span className='subreddit-path font skeleton' style={{width: '40%'}}> </span>
+            <nav className='thread-nav' >
+                <div className='skeleton skeleton-title' style={{margin: '1em', width: '30%'}}></div>
             </nav>    
             <header className='thread-header flex' >
-                <div className='upvotes-container flex'>
-                    <span className='upvotes flex' style={{width: '49%'}}>              
-                        <div className='skeleton skeleton-detail'></div>
-                    </span>
-                    <span className='thread-ratio' style={{width: '31%'}}>
-                        <div className='skeleton skeleton-detail'></div>
-                    </span>
+                <div className='upvotes-container flex'>      
+                        <div className='skeleton skeleton-detail' style={{width: '30%', margin: '0.5em'}}></div>                    
+                        <div className='skeleton skeleton-detail' style={{width: '30%', margin: '0.5em'}}></div>
                 </div>
                 <section className='thread-details flex'>
                     <div className='thread-user-container flex'>
                         <div className='thread-image-container skeleton'> </div>
-                        <span className='post-user-name' style={{width: '50%'}}> 
-                            <div className='skeleton skeleton-text' style={{width: '60%'}}></div>
-                        </span>
+                        <div className='skeleton skeleton-text' style={{width: '25%'}}></div>
                     </div>
-                    <div className='thread-title-container' style={{width: '40em'}}>
-                        <div className='skeleton skeleton-title'></div>
+                    <div className='thread-title-container' >
+                        <div className='skeleton skeleton-title' style={{width: '90%'}}></div>
                         <div className='skeleton skeleton-title'></div>
                     </div>
                 </section>

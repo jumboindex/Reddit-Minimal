@@ -2,11 +2,13 @@
     display: flex;
     align-items: center;
     flex-flow: column nowrap;
+    position: relative;
+    top: 2.75em;  
 }
 
 .image-container-404 {
     height: fit-content;
-    margin: 2em 0 1em;
+    margin: 3em 0 1em;
 }
 
 .main-404 p {
@@ -16,7 +18,7 @@
 .button-404 {
     margin: 1em;
     border: solid 1px blue;
-    padding: 1rem;
+    padding: 1em;
     border-radius: 5%;
     background-color: white;
 }

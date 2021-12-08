@@ -1,14 +1,15 @@
 .filter { 
-    height: 250px;
-    width: 250px;
+    height: 15.625em;
+    width: 15.625em;
     position: relative;
-    left: 19%;
+    left: 17%;
     top: 2vh;
+    margin-top: 1.5em;
 
 }
 .filter-container {
     width: 100%;
-    height: 3rem;
+    height: 3em;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -21,10 +22,10 @@
 
 .filter-icon {
     color:#6d6e6f;
-    margin-left: 0.25rem;
-    margin-right: 2rem;
-    height: 1.5rem;
-    width: 1.5rem;
+    margin-left: 0.25em;
+    margin-right: 2em;
+    height: 1.5em;
+    width: 1.5em;
 }
 
 .filter-font {
@@ -36,3 +37,36 @@
 a {
     text-decoration: none;
 }
+
+
+@media screen and (min-width: 1127px) and (max-width: 1690px) {
+    
+    .filter {
+        left: 6%;
+    }
+}
+
+@media screen and (min-width: 815px) and (max-width: 1126px) {
+
+    .filter {
+        left: 4%;
+    }
+}
+
+@media screen and (min-width: 570px) and (max-width: 814px) {
+
+    .filter {
+        left: 2%;
+    }
+}    
+
+@media screen and (max-width: 569px) {
+    
+    .filter {
+        left: 0;
+    }
+
+    .filter-font {
+        display: none;
+    }  
+ }
