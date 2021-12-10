@@ -21,7 +21,7 @@
 }
 
 .filter-icon {
-    color:#6d6e6f;
+    color: var(--filterIcon);
     margin-left: 0.25em;
     margin-right: 2em;
     height: 1.5em;
@@ -29,7 +29,7 @@
 }
 
 .filter-font {
-    color: #1f1f20;
+    color: var(--filerFont);
     font-weight: 500;
     letter-spacing: 0.025;
 }

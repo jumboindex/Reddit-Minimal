@@ -1,7 +1,7 @@
 import React from "react";
 import './CommentCard.css';
 import { BsBoxArrowInUpRight, BsShareFill } from 'react-icons/bs';
-import { getPostTime } from "../../Helpers/helpers";
+import { copyToClipboard, getPostTime } from "../../Helpers/helpers";
 
 const CommentCard = ({comment}) => {
 
@@ -20,7 +20,7 @@ const CommentCard = ({comment}) => {
             <div className='comment-card-actions'>
                 <BsBoxArrowInUpRight className='comment-card-icon' />
                 <span> {comment.data.ups} Upvotes </span>
-                <div className='comment-card-share'>
+                <div className='comment-card-share' onClick={() => copyToClipboard()}>
                     <BsShareFill className='comment-card-icon' />
                     <span> Share </span>
                 </div>

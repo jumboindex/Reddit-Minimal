@@ -9,9 +9,18 @@ import PostView from '../Components/PostVeiw/PostView';
 import SubredditVeiw from '../Components/SubredditView/SubredditView';
 import SearchResults from '../Components/SearchResults/SearchResults';
 import NoMatch from '../Components/NoMatch/NoMatch';
-
+import { useEffect } from 'react';
+import { updateBodyTheme } from '../Helpers/helpers';
+import useLocalStorage from 'use-local-storage';
 
 const App = () => {
+
+  const [theme] = useLocalStorage('app-theme', 'light');
+  
+  useEffect(() => {
+    updateBodyTheme(theme);
+  },[theme]) 
+
   return (
     <div className="App">
       <Provider store={store}>
@@ -29,8 +38,9 @@ const App = () => {
             <Route path='*' element={<NoMatch />} />
           </Routes>
         </Router>
-      </Provider>  
+      </Provider>    
     </div>
+    
   );
 }
 

@@ -8,7 +8,6 @@ import Thread from "../Thread/Thread";
 const PostView = () => {
     const dispatch = useDispatch();
     const params = useParams();
-    const windowWidth = window.innerWidth;
 
     useEffect(() => {
     dispatch(fetchPostWithComments(params))

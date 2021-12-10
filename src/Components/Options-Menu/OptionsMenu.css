@@ -1,12 +1,12 @@
 .light-grey {
-    color:#8f8f8f;
+    color: var(--optionsGrey);
 }
 
 .options-menu {
     position: absolute;
     top: 4em;
     right: 4em;
-    background-color: #ffffff;
+    background-color: var(--lightBackground);
     width: 15.625em;
     height: 15.625em;
     padding-bottom: 0.5em;
@@ -17,7 +17,7 @@
     justify-items: center;
     align-items: center;
     z-index: 10;
-    box-shadow: 1px 2px 2px rgb(165, 162, 162);
+    box-shadow: 1px 2px 2px var(--shaddow);
     border-radius: 2px;
 }
 
@@ -70,6 +70,7 @@
 
 .nightmode-icon {
     grid-area: 2 / 1 / span 1 / span 1;
+    color: var(--font)
 }
 
 .nightmode-text {
@@ -89,6 +90,7 @@
 
 .github-icon {
     grid-area: 4 / 1 / span 1 / span 1;
+    color: var(--font);
 }
 
 .github-text {
@@ -98,6 +100,7 @@
 
 .reddit-icon {
     grid-area: 5 / 1 / span 1 / span 1;
+    color: var(--font);
 }
 
 .reddit-text {

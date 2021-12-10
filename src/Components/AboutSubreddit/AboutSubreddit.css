@@ -4,7 +4,7 @@ p, span, h3 {
 }
 
 .about {
-    background-color:#ffffff ;
+    background-color:var(--lightBackground) ;
     width:18.75em;
     height:fit-content;
     position: relative;
@@ -21,7 +21,7 @@ p, span, h3 {
     font-size: 0.875rem;
     font-weight: 575;
     line-height: 1.75rem;
-    color: #9e9e9e;
+    color: var(--menuHeading);
     margin: 0.5em 0 0 1.5em;
 
 }

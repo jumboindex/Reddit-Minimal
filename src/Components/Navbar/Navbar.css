@@ -4,14 +4,14 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #ffffff;
+    background-color:var(--lightBackground);
     position: fixed;
     top: 0;
     z-index: 10;
 }
 
 .nav-shaddow {
-    box-shadow: 0 3px 2px rgb(165, 162, 162);
+    box-shadow: 0 3px 2px var(--navShaddow);
 } 
 
 .logo {
@@ -31,7 +31,7 @@
 }
 
 .search-container:focus-within {
-    outline: 1px solid blue;
+    outline: 1px solid var(--searchOutline);
     box-shadow: inset;
 }
 
@@ -39,6 +39,7 @@
     width: 90%;
     height: 85%;
     border-style: none;  
+    background-color: var(--lightBackground);
 }
 
 .searchbar:focus {
@@ -55,7 +56,7 @@
 
 .menu-btn {
     border:none;
-    background-color: white;
+    background-color:var(--lightBackground);
     width: 3em;
     height: 3em;
     display: flex;
@@ -69,10 +70,11 @@
 .menu {
     height: 3em;
     width: 1.75em;
+    color: var(--font);
 }
 
 .menu-btn:hover {
-    background-color: whitesmoke;
+    background-color: var(--hover);
     cursor:pointer;
 }
 

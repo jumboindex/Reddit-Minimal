@@ -3,7 +3,7 @@ import './PostCard.css';
 import { MdComment } from 'react-icons/md';
 import { BiLinkExternal } from 'react-icons/bi';
 import { BsShareFill } from 'react-icons/bs';
-import { mediaPreview, postTitleTrim, upvoteFormat } from "../../Helpers/helpers";
+import { copyToClipboard, mediaPreview, postTitleTrim, upvoteFormat } from "../../Helpers/helpers";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchSubredditImage } from "../../Features/subredditImageSlice/subredditImageSlice";
 import SubredditIcon from "../SubredditIcon/SubredditIcon";
@@ -41,7 +41,7 @@ const PostCard = ({ data }) => {
                         <Link to={`/post/${subreddit}/${id}`}>
                         <div className='post-card-actions'><BiLinkExternal className='post-card-icon' /><span className='post-card-text'> Details </span></div>
                         </Link>
-                        <div className='post-card-actions'><BsShareFill className='post-card-icon' /><span className='post-card-text'> Share </span></div>
+                        <div className='post-card-actions' onClick={() => copyToClipboard()}><BsShareFill className='post-card-icon' /><span className='post-card-text'> Share </span></div>
                     </footer>
                 </div>
             </div> 

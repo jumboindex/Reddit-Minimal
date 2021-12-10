@@ -9,9 +9,9 @@ h1, h2, span, a {
     height: fit-content;
     width: 53.125em;
     position: absolute;
-    left: 34%;
+    left: 33%;
     top: 0;
-    background-color: #ffffff;
+    background-color: var(--lightBackground);
     margin-top: 1.5em;
     margin-left: 1em;
 }
@@ -27,13 +27,13 @@ h1, h2, span, a {
     font-weight: 550;
     margin-right: 1em;
     line-height: 1.4rem;
-    background-color:#ebebeb;
-    color: #a5a5a5;
+    background-color:var(--greyBackground);
+    color: var(--subredditPathText);
     border-radius: 5px;
 }
 
 .subreddit-path a {
-    color: #5a5a5a;
+    color: var(--subredditPathTextLink);
 }
 
 .thread-header {
@@ -67,7 +67,7 @@ h1, h2, span, a {
     font-weight: 350;
     line-height: 0.75;
     margin-right: 1rem;
-    color: #757575;
+    color: var(--threadRationText);
 }
 
 .thread-details {
@@ -86,7 +86,7 @@ h1, h2, span, a {
     height: 2.5em;
     width: 2.5em;
     border-radius: 50%;
-    background-color: #bdbdbd;
+    background-color: var(--imageBackground);
     margin: 0 1em 0 1.5em;
     display: flex;
     align-items: center;
@@ -108,7 +108,7 @@ h1, h2, span, a {
 .post-time {
     font-size: 0.75rem;
     font-weight: 350;
-    color: #757575;
+    color: var(--threadRationText);
 }
 
 .thread-title-container {

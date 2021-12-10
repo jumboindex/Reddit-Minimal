@@ -102,3 +102,18 @@ export const getIconURL = (urlString) => {
     if (iconURL) return iconURL;
     return urlString
 }
+
+ export const updateBodyTheme = (theme) => {
+    if (theme === 'dark') return document.documentElement.setAttribute('data-theme', 'dark');
+    if (theme === 'light') return document.documentElement.removeAttribute('data-theme', 'dark');
+    return null;
+  }
+
+  export const copyToClipboard = () => {
+      const url = window.location.href;
+      try {
+          navigator.clipboard.writeText(url);
+      } catch (error) {
+          console.log(error);
+      }
+  };

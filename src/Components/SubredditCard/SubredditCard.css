@@ -8,14 +8,14 @@
 }
 
 .subreddit-card:hover {
-    background-color:rgb(240, 240, 240);
+    background-color: var(--hover);
 }
 
 .subreddit-card-img-container {
     width: 2.75em;
     height: 2.75em;
     border-radius: 50%;
-    background-color: #bdbdbd;
+    background-color: var(--imageBackground);
     margin-right: 1em;
     margin-left: 1em;
     display: flex;
@@ -44,7 +44,7 @@
 }
 
 .subreddit-card-subs {
-    color: #757575;
+    color: var(--menuSubscriberText);
     font-size: 0.85rem;
     font-weight: 150;
     line-height: 1.2rem;
