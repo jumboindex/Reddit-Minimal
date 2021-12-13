@@ -7,6 +7,7 @@ import { fetchUserDetails } from "../../Features/userDetailsSlice/userDetailsSli
 import { getPostTime, mediaPreview, upvoteFormat } from "../../Helpers/helpers";
 import CommentCard from "../CommentCard/CommentCard";
 import ErrorCard from "../ErrorCard/ErrorCard";
+import Footer from "../Footer/Footer";
 import SkeletonThread from "../SkeletonComponents/SkeletonThread";
 import UserIcon from "../UserIcon/UserIcon";
 import './Thread.css';
@@ -18,6 +19,11 @@ const Thread = ({ post, comments, params, loading, error, shouldLoad }) => {
     const {subreddit, postID } = params;
     const { ups, upvote_ratio, title, author, created, post_hint, url, media, selftext}  = post;
     
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+      }, [])
+
     useEffect(() => {
         if (shouldLoad) {
         dispatch(fetchUserDetails(author)) }
@@ -66,7 +72,7 @@ const Thread = ({ post, comments, params, loading, error, shouldLoad }) => {
             <section className='thread-body'>
                 {selftext ? <Markdown>{selftext}</Markdown> : null}
                 { post_hint ? <div className='thread-media-preview'>
-                        {mediaPreview(post_hint, url, media)} 
+                        {mediaPreview(post_hint, url, media, 'thread')} 
                     </div> : null}
             </section>
             <section className='thread-comments'>

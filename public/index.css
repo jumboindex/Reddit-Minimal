@@ -75,6 +75,7 @@ a, a:hover, a:visited, a:active {
 .main {
     position: relative;
     top: 2.75em;
+    min-height: max-content;
 } 
 
 .skeleton {

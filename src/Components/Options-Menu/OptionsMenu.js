@@ -47,10 +47,14 @@ const OptionsMenu = () => {
                     </div>
                 </label>
                 <span className='options-text light-grey more-stuff'> More Stuff </span> 
-                <FaGithub data-testid='github-icon' alt='github icon' className='icon github-icon' />
+                <a className='github-anchor' href='https://github.com/jumboindex' target='_blank' rel="noreferrer">
+                    <FaGithub data-testid='github-icon' alt='github icon' className='icon github-icon' />
                     <span className='options-text github-text'>Github</span>
-                <FaRedditAlien data-testid='reddit-icon' alt='github icon' className='icon reddit-icon' />
-                <span className='options-text reddit-text'>Visit Reddit</span> 
+                </a>
+                <a className='reddit-anchor'  href='https://reddit.com' target='_blank' rel="noreferrer">
+                    <FaRedditAlien data-testid='reddit-icon' alt='github icon' className='icon reddit-icon' />
+                    <span href='https://reddit.com' target='_blank' rel="noreferrer" className='options-text reddit-text'>Visit Reddit</span> 
+                </a>
             </div>
         )
       

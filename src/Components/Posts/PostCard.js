@@ -60,7 +60,7 @@ const PostCard = ({ data }) => {
             { post_hint ? 
                 <div className='post-card-media-preview'>
                     <div className='post-card-media-container'>
-                    {mediaPreview(post_hint, url, media)} 
+                    {mediaPreview(post_hint, url, media, 'post-card')} 
                     </div>
                 </div> : null}
             <aside className='post-card-votes'>

@@ -2,7 +2,7 @@ import React from "react";
 
 // media preview helper
 
-export const mediaPreview = ( post_hint, url, media ) => {
+export const mediaPreview = ( post_hint, url, media, requestor ) => {
 
     if (post_hint ==='link') {
         return ( <div className='external-link'>
@@ -18,15 +18,44 @@ export const mediaPreview = ( post_hint, url, media ) => {
             <img src={url} alt='media preview' className='media-preview' />
         );
     };
-    // todo - figure out how to parse iframe html strings - "https://gfycat.com" - also produces these
+
+    // todo - figure out how to parse iframe html strings - "https://gfycat.com" - also produces these.
     if (post_hint === 'rich:video') {
         if (url.includes('youtu')) {
-            let str = media.oembed.html;
-            //str.replace('&lt;', '<')
-            //str.replace('&gt;', '>')
-            console.log(str)
-            //return ({str});
-        } else { return ( <embed 
+            const escapedIframeString = media.oembed.html;
+            const regex = /(https):\/\/([\w_-]+(?:(?:\.[\w_-]+)+))([\w.,@?^=%&:\/~+#-]*[\w@?^=%&\/~+#-])/m;
+            const match = escapedIframeString.match(regex)
+           
+            if (match && requestor === 'post-card') {  
+                return ( 
+                    <iframe 
+                    style={{width:"100%", height:"100%"}}
+                    width="560" 
+                            height="315" 
+                            src={match[0]}
+                            title="YouTube video player" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                    </iframe>) 
+                } else if (match && requestor === 'thread') {
+
+                return (
+                <iframe 
+                    style={{width:"100%", maxHeight:"100%"}}
+                        width="560" 
+                        height="315" 
+                        src={match[0]}
+                        title="YouTube video player" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                </iframe> )
+
+            } else return null;
+            
+        } else {
+             return ( <embed 
                             type="video/mp4" title='media preview' 
                             src={url} />)
         };

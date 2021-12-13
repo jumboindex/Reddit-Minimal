@@ -88,25 +88,33 @@
     justify-self: start;
 }
 
+.github-anchor {
+    grid-area: 4 / 1 / span 1 / span 2;
+    justify-self: start;
+}
+
 .github-icon {
-    grid-area: 4 / 1 / span 1 / span 1;
     color: var(--font);
 }
 
 .github-text {
-    grid-area:  4 / 2 / span 1 / span 1;
+    justify-self: start;
+}
+
+.reddit-anchor{
+    grid-area: 5 / 1 / span 1 / span 2;
     justify-self: start;
 }
 
 .reddit-icon {
-    grid-area: 5 / 1 / span 1 / span 1;
     color: var(--font);
 }
 
 .reddit-text {
-    grid-area: 5 / 2 / span 1 / span 1;
     justify-self: start;
 }
+
+
 
 /* Slider Styling */
 
