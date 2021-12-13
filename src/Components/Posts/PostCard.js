@@ -8,7 +8,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchSubredditImage } from "../../Features/subredditImageSlice/subredditImageSlice";
 import SubredditIcon from "../SubredditIcon/SubredditIcon";
 import { Link } from "react-router-dom";
-
+import { OverlayTrigger } from "react-bootstrap";
+import renderTooltip from "../Tooltip/Tooltip";
 
 
 const PostCard = ({ data }) => {
@@ -20,7 +21,8 @@ const PostCard = ({ data }) => {
         dispatch(fetchSubredditImage(subreddit_name_prefixed));
     }, [dispatch, subreddit_name_prefixed]);
     
-    let subredditImageData = useSelector(state => state.subredditImages.subredditImages[subreddit_name_prefixed]);
+    const subredditImageData = useSelector(state => state.subredditImages.subredditImages[subreddit_name_prefixed]);
+    
     return (
         <div data-testid='post-card' className='post-card'>
             <div className='post-card-container'>
@@ -41,7 +43,17 @@ const PostCard = ({ data }) => {
                         <Link to={`/post/${subreddit}/${id}`}>
                         <div className='post-card-actions'><BiLinkExternal className='post-card-icon' /><span className='post-card-text'> Details </span></div>
                         </Link>
-                        <div className='post-card-actions' onClick={() => copyToClipboard()}><BsShareFill className='post-card-icon' /><span className='post-card-text'> Share </span></div>
+                        <div className='post-card-actions' onClick={() => copyToClipboard()}>
+                            <BsShareFill className='post-card-icon' />
+                            <OverlayTrigger
+                                placement="right"
+                                delay={{ show: 150, hide: 400 }}
+                                overlay={renderTooltip}
+                                
+                                >
+                                <span className='post-card-text'> Share </span>
+                            </OverlayTrigger>    
+                        </div>
                     </footer>
                 </div>
             </div> 

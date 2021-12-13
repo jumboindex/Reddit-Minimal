@@ -28,6 +28,7 @@ const Searchbar = () => {
         document.addEventListener('keydown', handleSearchTextChange);
 
         return () => document.removeEventListener('keydown', handleSearchTextChange);
+        
     }, [searchText, navigate]);
 
     return ( 

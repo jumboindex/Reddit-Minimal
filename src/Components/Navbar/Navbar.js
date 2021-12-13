@@ -14,7 +14,7 @@ const Navbar = () => {
    
     const currentTheme = useSelector(selectTheme);
     const [ localTheme ] = useLocalStorage('app-theme', 'light')
-    const [scrolled, setScrolled] = useState(false);
+    const [ scrolled, setScrolled ] = useState(false);
     const dispatch = useDispatch();
    
     useEffect(() => {
@@ -32,8 +32,8 @@ const Navbar = () => {
     return (
         <nav data-testid='navbar'  aria-label='site navigation bar' className={scrolled ? 'nav-shaddow nav-main' : 'nav-main'}>
             <Link to='/'>  
-        
-                    { currentTheme === 'light' ? <LogoLight data-testid='reddit-logo' className='logo' alt='reddit logo' />
+                    { currentTheme === 'light' ? 
+                    <LogoLight data-testid='reddit-logo' className='logo' alt='reddit logo' />
                     : <LogoDark data-testid='reddit-logo' className='logo' alt='reddit logo' />}
             </Link>    
             <Searchbar />

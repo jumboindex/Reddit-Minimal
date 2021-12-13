@@ -2,6 +2,8 @@ import React from "react";
 import './CommentCard.css';
 import { BsBoxArrowInUpRight, BsShareFill } from 'react-icons/bs';
 import { copyToClipboard, getPostTime } from "../../Helpers/helpers";
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
+import renderTooltip from "../Tooltip/Tooltip";
 
 const CommentCard = ({comment}) => {
 
@@ -22,7 +24,13 @@ const CommentCard = ({comment}) => {
                 <span> {comment.data.ups} Upvotes </span>
                 <div className='comment-card-share' onClick={() => copyToClipboard()}>
                     <BsShareFill className='comment-card-icon' />
-                    <span> Share </span>
+                    <OverlayTrigger
+                                placement="right"
+                                delay={{ show: 150, hide: 400 }}
+                                overlay={renderTooltip}
+                                >
+                        <span> Share </span>
+                    </OverlayTrigger>
                 </div>
             </div>
         </section>

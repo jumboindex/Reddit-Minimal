@@ -48,7 +48,7 @@ const OptionsMenu = () => {
                 </label>
                 <span className='options-text light-grey more-stuff'> More Stuff </span> 
                 <FaGithub data-testid='github-icon' alt='github icon' className='icon github-icon' />
-                <span className='options-text github-text'>Github</span>
+                    <span className='options-text github-text'>Github</span>
                 <FaRedditAlien data-testid='reddit-icon' alt='github icon' className='icon reddit-icon' />
                 <span className='options-text reddit-text'>Visit Reddit</span> 
             </div>

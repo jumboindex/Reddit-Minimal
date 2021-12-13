@@ -218,6 +218,10 @@ span, h2 {
     color: white;
 }
 
+#button-tooltip {
+    margin-left: 0.5em;
+}
+
 @media screen and (min-width: 1127px) and (max-width: 1690px) {
    
     .post-container {

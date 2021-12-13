@@ -6,16 +6,19 @@ import SubredditMenu from "../SubredditMenu/SubredditMenu";
 import Thread from "../Thread/Thread";
 
 const PostView = () => {
+
     const dispatch = useDispatch();
     const params = useParams();
 
     useEffect(() => {
-    dispatch(fetchPostWithComments(params))
+        dispatch(fetchPostWithComments(params));
+        
         return () => {
             dispatch(clearPost());
             dispatch(clearComments());
-        }
-    }, [dispatch, params])
+        };
+
+    }, [dispatch, params]);
 
     const postData = useSelector(selectPost);
     const commentData = useSelector(selectComments);
