@@ -1,10 +1,16 @@
 import OptionsMenu from './OptionsMenu';
+import '@testing-library/jest-dom'
 import { render, screen } from '@testing-library/react';
-
+import store from '../../App/store';
+import { Provider } from 'react-redux';
 
 describe('Options Menu', ()=> {
     beforeEach(()=> {
-        render(<OptionsMenu />);
+        render(
+        <Provider store={store}>
+            <OptionsMenu />
+        </Provider>
+        );
     }); 
     it('renders the options menu', () => {
         expect(screen.getByTestId('options-menu')).toBeInTheDocument();

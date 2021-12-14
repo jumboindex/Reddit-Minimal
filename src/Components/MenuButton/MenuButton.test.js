@@ -1,10 +1,17 @@
 import MenuButton from './MenuButton';
 import { render, screen, waitForElementToBeRemoved } from '@testing-library/react'
 import userEvent from '@testing-library/user-event';
+import '@testing-library/jest-dom';
+import { Provider } from 'react-redux';
+import store from '../../App/store';
+
 
 describe('menu button', ()=> {
     beforeEach(() => {
-        render(<MenuButton />)
+        render(
+        <Provider store={store}>
+            <MenuButton />
+         </Provider>)
     });
     test('renders the toggle menu button', ()=>{
         expect(screen.getByTestId('menu-button')).toBeInTheDocument(); 

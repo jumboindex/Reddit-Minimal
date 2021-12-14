@@ -7,7 +7,6 @@ import { fetchUserDetails } from "../../Features/userDetailsSlice/userDetailsSli
 import { getPostTime, mediaPreview, upvoteFormat } from "../../Helpers/helpers";
 import CommentCard from "../CommentCard/CommentCard";
 import ErrorCard from "../ErrorCard/ErrorCard";
-import Footer from "../Footer/Footer";
 import SkeletonThread from "../SkeletonComponents/SkeletonThread";
 import UserIcon from "../UserIcon/UserIcon";
 import './Thread.css';

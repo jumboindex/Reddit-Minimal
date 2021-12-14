@@ -9,6 +9,7 @@
 
 .app-footer a {
     font-size: 1rem;
+    color: var(--font);
 }
 
 .app-footer a:hover {

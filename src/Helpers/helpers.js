@@ -57,13 +57,13 @@ export const mediaPreview = ( post_hint, url, media, requestor ) => {
         } else {
              return ( <embed 
                             type="video/mp4" title='media preview' 
-                            src={url} />)
+                            src={url} muted />)
         };
     };
 
     if (post_hint === 'hosted:video') {
         return (
-            <video controls autoPlay='' loop aria-label='media preview'>
+            <video controls autoPlay='' loop muted aria-label='media preview'>
                 <source type="video/mp4" src={media.reddit_video.fallback_url} />
             </video>
         );

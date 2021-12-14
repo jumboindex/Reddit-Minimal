@@ -12,7 +12,6 @@ import NoMatch from '../Components/NoMatch/NoMatch';
 import { useEffect } from 'react';
 import { updateBodyTheme } from '../Helpers/helpers';
 import useLocalStorage from 'use-local-storage';
-import Footer from '../Components/Footer/Footer';
 
 const App = () => {
 
