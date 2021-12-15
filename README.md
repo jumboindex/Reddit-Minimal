@@ -88,3 +88,7 @@ initial wireframes and final design are below, not some features in wireframes h
 Project is: Beta v0.1
 
 ## Tests
+
+This project has a number of unit test which make use of Jest and React-testing-libary. After initially trying Enzyme, I selected React-testing-libary as I found it was easier to use. The tests are by no way finished or fleshed out (with MenuButton.test.js being the most fleshed out), and will revisited time permitting.
+
+![test output](./design/test%20capture.png)

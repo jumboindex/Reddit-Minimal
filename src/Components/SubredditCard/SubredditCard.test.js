@@ -1,10 +1,9 @@
-import { screen, render } from "@testing-library/react";
+import { screen } from "@testing-library/react";
 import SubredditCard from "./SubredditCard";
 import '@testing-library/jest-dom';
 import { Provider } from "react-redux";
 import store from "../../App/store";
-import { Router, Route, Routes } from "react-router-dom";
-import SubredditVeiw from "../SubredditView/SubredditView";
+import { renderWithRouter } from "../../test-utils";
 
 const data = { data: {
     display_name_prefixed: "r/gaming", 
@@ -17,12 +16,9 @@ const data = { data: {
 
 describe('<SubredditCard />', () => {
     beforeEach(() => {
-        render(
+        renderWithRouter(
         <Provider store={store}>
-            <Router>
-        
                 <SubredditCard data={data}/>
-            </Router>
         </Provider>
         );
     })

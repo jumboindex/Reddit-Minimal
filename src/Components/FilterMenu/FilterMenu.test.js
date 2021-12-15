@@ -1,14 +1,14 @@
 import '@testing-library/jest-dom';
-import { render, screen } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
+import { screen } from "@testing-library/react";
 import { Provider } from 'react-redux';
 import store from '../../App/store';
+import { renderWithRouter } from '../../test-utils';
 import FilterMenu from "./FilterMenu";
 
 
 describe('<FilterMenu />', () => {
     beforeEach(() => {
-        render(
+        renderWithRouter(
         <Provider store={store}>
             <FilterMenu />
         </Provider>

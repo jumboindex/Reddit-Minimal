@@ -13,7 +13,7 @@ import renderTooltip from "../Tooltip/Tooltip";
 
 
 const PostCard = ({ data }) => {
-
+    
     const { title, subreddit_name_prefixed, author, ups, post_hint, url, media, subreddit, id} = data.data;
     const dispatch = useDispatch();
     

@@ -1,13 +1,14 @@
 import Navbar from "./Navbar";
-import { render, screen } from '@testing-library/react'
+import { screen } from '@testing-library/react'
 import '@testing-library/jest-dom';
 import { Provider } from "react-redux";
 import store from '../../App/store';
+import { renderWithRouter } from "../../test-utils";
 
 
 describe('<Navbar />', ()=> {
     beforeEach(() => {
-        render(
+        renderWithRouter(
         <Provider store={store}>
             <Navbar />
         </Provider>);

@@ -1,14 +1,15 @@
 import MenuButton from './MenuButton';
-import { render, screen, waitForElementToBeRemoved } from '@testing-library/react'
+import { screen, waitForElementToBeRemoved } from '@testing-library/react'
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
 import { Provider } from 'react-redux';
 import store from '../../App/store';
+import { renderWithRouter } from '../../test-utils';
 
 
 describe('menu button', ()=> {
     beforeEach(() => {
-        render(
+        renderWithRouter(
         <Provider store={store}>
             <MenuButton />
          </Provider>)
@@ -48,3 +49,5 @@ describe('menu button', ()=> {
         expect(optionsMenu).toHaveClass('options-menu-exit-active')
      });
 });
+
+

@@ -22,7 +22,7 @@ const App = () => {
   },[theme]) 
 
   return (
-    <div className="App">
+    <div className="App" data-testid='App'>
         <Provider store={store}>
           <Router>
             <Navbar />

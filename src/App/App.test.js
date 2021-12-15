@@ -1,17 +1,25 @@
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom'
 import App from './App';
-import store from './store';
-import { Provider } from 'react-redux';
+
+window.scrollTo = jest.fn();
+
 
 describe('<App />', ()=> {
   beforeAll(()=> {
-    render(
-    <Provider store={store}>
-      <App />
-    </Provider>)
-  });
-  test('renders the Navbar component', ()=> {
-    expect(screen.getByTestId('navbar')).toBeInTheDocument();
-  });
+      render(<App />)
+    });
+
+    afterEach(() => {
+      jest.resetAllMocks();
+    });
+    
+    afterAll(() => {
+      jest.clearAllMocks();
+    });
+
+    test('App renders', () => {
+      expect(screen.getByTestId('App')).toBeInTheDocument();
+    })
 });
+

@@ -18,12 +18,12 @@ const Searchbar = () => {
 
     useEffect(() => {
 
-        const  handleSearchTextChange = (e) => {
-            if (e.key === 'Enter' || e.key === 'NumpadEnter') {
-                navigate(`/search/${e.target.value}`);
-                 return setSearchText('');
-                } else return;
-        }
+    const  handleSearchTextChange = (e) => {
+        if (e.key === 'Enter' || e.key === 'NumpadEnter') {
+            navigate(`/search/${e.target.value}`);
+            return setSearchText('');
+            } else return;
+    }
 
         document.addEventListener('keydown', handleSearchTextChange);
 
