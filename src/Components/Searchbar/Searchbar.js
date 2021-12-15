@@ -19,7 +19,7 @@ const Searchbar = () => {
     useEffect(() => {
 
     const  handleSearchTextChange = (e) => {
-        if (e.key === 'Enter' || e.key === 'NumpadEnter') {
+        if (e.key === 'Enter' || e.key === 'NumpadEnter' || e.key === 13) {
             navigate(`/search/${e.target.value}`);
             return setSearchText('');
             } else return;
