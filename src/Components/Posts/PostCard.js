@@ -13,7 +13,7 @@ import renderTooltip from "../Tooltip/Tooltip";
 
 
 const PostCard = ({ data }) => {
-    
+
     const { title, subreddit_name_prefixed, author, ups, post_hint, url, media, subreddit, id} = data.data;
     const dispatch = useDispatch();
     
@@ -35,7 +35,9 @@ const PostCard = ({ data }) => {
                 </header>
 
                 <div className='post-card-content'>
-                    <h2 className='post-card-preview'>{postTitleTrim(title)}</h2>
+                    <Link to={`/post/${subreddit}/${id}`}>
+                        <h2 className='post-card-preview'>{postTitleTrim(title)}</h2>
+                    </Link>
                     <footer className='post-card-footer'>
                         <Link to={`/post/${subreddit}/${id}`}>
                             <div className='post-card-actions'><MdComment className='post-card-icon' /><span className='post-card-text'>Comments</span></div>
