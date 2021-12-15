@@ -1,5 +1,6 @@
 {
   "name": "reddit-minimal",
+  "homepage": "https://reddit-minimal.jamesball.tech/",
   "jest": {
     "transformIgnorePatterns": [
       "node_modules/(?!react-icons)/"
@@ -28,7 +29,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -52,6 +55,7 @@
     "@testing-library/dom": "^8.11.1",
     "@testing-library/user-event": "^13.5.0",
     "@wojtekmaj/enzyme-adapter-react-17": "^0.6.5",
+    "gh-pages": "^3.2.3",
     "react-test-renderer": "^17.0.2",
     "webpack": "^4.44.2"
   }
