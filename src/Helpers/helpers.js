@@ -63,7 +63,7 @@ export const mediaPreview = ( post_hint, url, media, requestor ) => {
 
     if (post_hint === 'hosted:video') {
         return (
-            <video controls autoPlay='false' loop muted aria-label='media preview'>
+            <video controls loop muted aria-label='media preview'>
                 <source type="video/mp4" src={media.reddit_video.fallback_url} />
             </video>
         );
@@ -74,7 +74,7 @@ export const mediaPreview = ( post_hint, url, media, requestor ) => {
 
 export const postTitleTrim = (postTitle) => {
     if (postTitle.length > 175) {
-        let postTitletrimmed = postTitle.slice(0,175) + '...'
+        const postTitletrimmed = postTitle.slice(0,175) + '...'
         return postTitletrimmed
     }
     return postTitle;

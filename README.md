@@ -17,6 +17,8 @@
 
 ## General info
 
+***If the app does not load in firefox, disable enhanced tracking protection - see*** <https://github.com/jumboindex/Reddit-Minimal/issues/5>
+
 This application is a clone of the popular social media website Reddit - <https://www.reddit.com/>.
 
 The app is built using React, Redux, react-router-dom, markdown-to-jsx and makes use of assets from react-icons and react-bootstrap. However, the majority of the front-end components are built from scratch (which proved to be quite time intensive when adding additional features which I will discuss later). The app makes use of the reddit json API (<https://github.com/reddit-archive/reddit/wiki/JSON>), manages state via Redux and is rendered using React.

@@ -1,4 +1,4 @@
-const apiEndPoint = 'https://www.reddit.com/';
+const apiEndPoint = 'https://api.reddit.com/';
 const initialOptions = {
     headers: {
         accept: 'application/json'
