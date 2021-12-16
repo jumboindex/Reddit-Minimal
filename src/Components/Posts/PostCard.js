@@ -1,5 +1,4 @@
-import React, { useEffect } from "react";
-import './PostCard.css';
+import React, { useEffect, useState } from "react";
 import { MdComment } from 'react-icons/md';
 import { BiLinkExternal } from 'react-icons/bi';
 import { BsShareFill } from 'react-icons/bs';
@@ -10,9 +9,12 @@ import SubredditIcon from "../SubredditIcon/SubredditIcon";
 import { Link } from "react-router-dom";
 import { OverlayTrigger } from "react-bootstrap";
 import renderTooltip from "../Tooltip/Tooltip";
+import renderTooltipCopied from "../Tooltip/TooltipCopied";
 
 
 const PostCard = ({ data }) => {
+
+    const [ copied, setCopied ] = useState(false);
 
     const { title, subreddit_name_prefixed, author, ups, post_hint, url, media, subreddit, id} = data.data;
     const dispatch = useDispatch();
@@ -45,13 +47,15 @@ const PostCard = ({ data }) => {
                         <Link to={`/post/${subreddit}/${id}`}>
                         <div className='post-card-actions'><BiLinkExternal className='post-card-icon' /><span className='post-card-text'> Details </span></div>
                         </Link>
-                        <div className='post-card-actions' onClick={() => copyToClipboard()}>
+                        <div className='post-card-actions' 
+                            onClick={() => {
+                                setCopied(true);
+                                copyToClipboard(); }}>
                             <BsShareFill className='post-card-icon' />
                             <OverlayTrigger
                                 placement="right"
                                 delay={{ show: 150, hide: 400 }}
-                                overlay={renderTooltip}
-                                
+                                overlay={ copied ? renderTooltipCopied : renderTooltip}
                                 >
                                 <span className='post-card-text'> Share </span>
                             </OverlayTrigger>    
