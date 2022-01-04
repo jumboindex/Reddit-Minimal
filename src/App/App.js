@@ -3,7 +3,7 @@ import Navbar from '../Components/Navbar/Navbar'
 import Content from '../Components/Content/Content';
 import { Provider } from 'react-redux';
 import store from './store';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 import FilteredContent from '../Components/FilteredContent/FilteredContent';
 import PostView from '../Components/PostVeiw/PostView';
 import SubredditVeiw from '../Components/SubredditView/SubredditView';
