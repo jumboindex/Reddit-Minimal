@@ -24,7 +24,7 @@ const App = () => {
   return (
     <div className="App" data-testid='App'>
         <Provider store={store}>
-          <Router>
+          <Router basename='/'>
             <Navbar />
             <Routes>
               <Route path='/' element={<Content />} />
