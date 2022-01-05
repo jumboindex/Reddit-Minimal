@@ -1,0 +1,32 @@
+.main-404 {
+    display: flex;
+    align-items: center;
+    flex-flow: column nowrap;
+    position: relative;
+    top: 2.75em;  
+}
+
+.image-container-404 {
+    height: fit-content;
+    margin: 3em 0 1em;
+}
+
+.main-404 p {
+    margin-bottom: 0.5em;
+    line-height: 1.25rem;
+}
+
+.button-404 {
+    margin: 1em;
+    border: solid 1px blue;
+    padding: 1em 1.5em;
+    border-radius: 5%;
+    background-color: white;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.button-404:hover {
+    background-color: blueviolet;
+    cursor: pointer;
+}
