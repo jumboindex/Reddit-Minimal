@@ -1,9 +1,9 @@
 import React from "react";
 
 // media preview helper
-
+// Reddit JSON API provides a post_hint key:value, and this this function formats any associated media 
 export const mediaPreview = ( post_hint, url, media, requestor ) => {
-
+    // external links - creates hyperlink 
     if (post_hint ==='link') {
         return ( <div className='external-link'>
                     <a href={url} target='_blank' rel="noreferrer">
@@ -12,21 +12,23 @@ export const mediaPreview = ( post_hint, url, media, requestor ) => {
                  </div>   
                 );
     };
-
+    // creates HTML for image associated with post
     if (post_hint === 'image') {
         return (
             <img src={url} alt='media preview' className='media-preview' />
         );
     };
-
+    // Rich video or youtube vidoes can be found under the post_hint:rich:video key/value
     // todo - figure out how to parse iframe html strings - "https://gfycat.com" - also produces these.
     if (post_hint === 'rich:video') {
         if (url.includes('youtu')) {
             const escapedIframeString = media.oembed.html;
             const regex = /(https):\/\/([\w_-]+(?:(?:\.[\w_-]+)+))([\w.,@?^=%&:\/~+#-]*[\w@?^=%&\/~+#-])/m;
             const match = escapedIframeString.match(regex)
+           // different height values are required depending on where the video is displayed
            
-            if (match && requestor === 'post-card') {  
+           // post card view 
+           if (match && requestor === 'post-card') {  
                 return ( 
                     <iframe 
                     style={{width:"100%", height:"100%"}}
@@ -39,28 +41,29 @@ export const mediaPreview = ( post_hint, url, media, requestor ) => {
                             allowfullscreen>
                     </iframe>) 
                 } else if (match && requestor === 'thread') {
-
-                return (
-                <iframe 
-                    style={{width:"100%", maxHeight:"100%"}}
-                        width="560" 
-                        height="315" 
-                        src={match[0]}
-                        title="YouTube video player" 
-                        frameBorder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen>
-                </iframe> )
+                    // thread view
+                    return (
+                            <iframe 
+                                style={{width:"100%", maxHeight:"100%"}}
+                                    width="560" 
+                                    height="315" 
+                                    src={match[0]}
+                                    title="YouTube video player" 
+                                    frameBorder="0" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                    allowfullscreen>
+                            </iframe> )
 
             } else return null;
             
         } else {
+            // other video formats 
              return ( <embed 
                             type="video/mp4" title='media preview' 
                             src={url} muted />)
         };
     };
-
+    // reddit hosted videos - note api only provides media with no sound - see bug #1 
     if (post_hint === 'hosted:video') {
         return (
             <video controls loop muted aria-label='media preview'>
