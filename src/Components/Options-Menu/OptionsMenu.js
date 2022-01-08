@@ -47,7 +47,7 @@ const OptionsMenu = () => {
                     </div>
                 </label>
                 <span className='options-text light-grey more-stuff'> More Stuff </span> 
-                <a className='github-anchor' href='https://github.com/jumboindex' target='_blank' rel="noreferrer">
+                <a className='github-anchor' href='https://github.com/jumboindex/Reddit-Minimal' target='_blank' rel="noreferrer">
                     <FaGithub data-testid='github-icon' alt='github icon' className='icon github-icon' />
                     <span className='options-text github-text'>Github</span>
                 </a>
